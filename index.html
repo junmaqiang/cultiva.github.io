@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cultiva100 - Premium Natural Health Supplements</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#10b981',
+            secondary: '#059669',
+            dark: '#1e293b',
+            light: '#f8fafc'
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-gradient {
+        @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+      }
+      .bg-gradient-primary {
+        @apply bg-gradient-to-r from-primary to-secondary;
+      }
+    }
+  </style>
+  <style>
+    .nav-link.active {
+      color: #10b981;
+      font-weight: 600;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col bg-light dark:bg-dark text-dark dark:text-light">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 w-full border-b bg-white/95 dark:bg-dark/95 backdrop-blur">
+    <div class="container mx-auto flex h-16 items-center">
+      <div class="mr-4 hidden md:flex">
+        <a href="#" class="mr-6 flex items-center space-x-2">
+          <span class="font-bold text-xl text-gradient">Cultiva100</span>
+        </a>
+        <nav class="flex items-center space-x-6 text-sm font-medium">
+          <a href="#" class="hover:text-primary transition-colors nav-link active">Home</a>
+          <a href="#products" class="hover:text-primary transition-colors nav-link">Products</a>
+          <a href="#about" class="hover:text-primary transition-colors nav-link">About</a>
+          <a href="#contact" class="hover:text-primary transition-colors nav-link">Contact</a>
+        </nav>
+      </div>
+
+      <div class="md:hidden">
+        <button class="p-2">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+        <a href="#" class="mr-6 flex items-center space-x-2 md:hidden">
+          <span class="font-bold text-xl text-gradient">Cultiva100</span>
+        </a>
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full" id="language-toggle">
+              <i class="fa fa-globe"></i>
+            </button>
+            <div class="absolute right-0 mt-2 w-48 bg-white dark:bg-dark border rounded-lg shadow-lg z-50 hidden" id="language-dropdown">
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">English</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">中文</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">日本語</a>
+            </div>
+          </div>
+          <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full" id="theme-toggle">
+            <i class="fa fa-moon-o"></i>
+          </button>
+          <a href="#" class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">
+            <i class="fa fa-user"></i>
+          </a>
+          <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full relative" id="cart-toggle">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" id="cart-count">0</span>
+          </button>
+          <div class="fixed right-0 top-0 h-full w-80 bg-white dark:bg-dark border-l shadow-lg z-50 transform translate-x-full transition-transform duration-300 ease-in-out" id="cart-sidebar">
+            <div class="p-4 border-b flex justify-between items-center">
+              <h3 class="text-xl font-semibold cart-title">Shopping Cart</h3>
+              <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full" id="cart-close">
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+            <div class="p-4 h-[calc(100%-120px)] overflow-y-auto" id="cart-items">
+              <div class="text-center py-8 text-gray-500 dark:text-gray-400 cart-empty">
+                Your cart is empty
+              </div>
+            </div>
+            <div class="p-4 border-t">
+              <div class="flex justify-between mb-4">
+                <span class="font-medium cart-total-label">Total:</span>
+                <span class="font-bold" id="cart-total">$0.00</span>
+              </div>
+              <button class="w-full px-4 py-2 bg-gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity cart-checkout">
+                Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white dark:from-emerald-950/20 dark:to-dark">
+    <div class="container mx-auto py-20 lg:py-32">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 text-sm font-medium hero-badge">
+            <i class="fa fa-star mr-1"></i>
+            Premium Quality
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight hero-title">
+            Premium Natural Health Supplements
+          </h1>
+          <p class="text-lg text-gray-600 dark:text-gray-300 max-w-xl hero-description">
+            Discover the power of nature with Cultiva100. Scientifically formulated, ethically sourced.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#products">
+              <button class="px-6 py-3 bg-gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity hero-button">
+                Shop Now
+                <i class="fa fa-arrow-right ml-2"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
+            <img src="public/images/hero.svg" alt="Premium Supplements" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-white dark:bg-dark border rounded-2xl p-4 shadow-lg">
+            <div class="flex items-center gap-3">
+              <div class="flex -space-x-2">
+                <div class="w-10 h-10 rounded-full border-2 border-white dark:border-dark overflow-hidden">
+                  <img src="public/images/user1.svg" alt="User" class="w-full h-full object-cover">
+                </div>
+                <div class="w-10 h-10 rounded-full border-2 border-white dark:border-dark overflow-hidden">
+                  <img src="public/images/user2.svg" alt="User" class="w-full h-full object-cover">
+                </div>
+                <div class="w-10 h-10 rounded-full border-2 border-white dark:border-dark overflow-hidden">
+                  <img src="public/images/user3.svg" alt="User" class="w-full h-full object-cover">
+                </div>
+                <div class="w-10 h-10 rounded-full border-2 border-white dark:border-dark overflow-hidden">
+                  <img src="public/images/user4.svg" alt="User" class="w-full h-full object-cover">
+                </div>
+              </div>
+              <div>
+                <p class="font-semibold">10K+</p>
+                <p class="text-xs text-gray-600 dark:text-gray-300">Happy Customers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-white dark:bg-dark">
+    <div class="container mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 features-title">Why Choose Cultiva100</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl border bg-white dark:bg-gray-800 hover:shadow-lg transition-all duration-300">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/30 dark:to-teal-900/30 flex items-center justify-center mb-6">
+            <i class="fa fa-leaf text-2xl text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 feature-item">100% Natural</h3>
+          <p class="text-gray-600 dark:text-gray-300">Pure ingredients from trusted sources</p>
+        </div>
+        <div class="p-8 rounded-2xl border bg-white dark:bg-gray-800 hover:shadow-lg transition-all duration-300">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/30 dark:to-teal-900/30 flex items-center justify-center mb-6">
+            <i class="fa fa-flask text-2xl text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 feature-item">Science-Backed</h3>
+          <p class="text-gray-600 dark:text-gray-300">Formulated with scientific research</p>
+        </div>
+        <div class="p-8 rounded-2xl border bg-white dark:bg-gray-800 hover:shadow-lg transition-all duration-300">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/30 dark:to-teal-900/30 flex items-center justify-center mb-6">
+            <i class="fa fa-globe text-2xl text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 feature-item">Global Shipping</h3>
+          <p class="text-gray-600 dark:text-gray-300">Delivered to your doorstep worldwide</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="relative">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-4">
+              <div class="aspect-[3/4] rounded-2xl overflow-hidden">
+                <img src="public/images/about1.svg" alt="About us 1" class="w-full h-full object-cover">
+              </div>
+              <div class="aspect-square rounded-2xl overflow-hidden">
+                <img src="public/images/about2.svg" alt="About us 2" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="space-y-4 pt-8">
+              <div class="aspect-square rounded-2xl overflow-hidden">
+                <img src="public/images/about3.svg" alt="About us 3" class="w-full h-full object-cover">
+              </div>
+              <div class="aspect-[3/4] rounded-2xl overflow-hidden">
+                <img src="public/images/about4.svg" alt="About us 4" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <h2 class="text-3xl md:text-4xl font-bold about-title">About Cultiva100</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 about-description">
+            At Cultiva100, we believe in the power of nature to heal and nourish. Our mission is to provide premium, science-backed natural health supplements that help you achieve your wellness goals.
+          </p>
+          <p class="text-gray-600 dark:text-gray-300">
+            Founded in Singapore, we source our ingredients from trusted suppliers worldwide, ensuring the highest quality and ethical standards. Every product is formulated by experts and rigorously tested for purity and potency.
+          </p>
+          <div class="grid grid-cols-2 gap-4 pt-4">
+            <div class="p-4 rounded-xl bg-white dark:bg-gray-800 border">
+              <p class="text-3xl font-bold text-primary">50+</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Premium Products</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-gray-800 border">
+              <p class="text-3xl font-bold text-primary">100+</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Countries Served</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="py-20 bg-white dark:bg-dark">
+    <div class="container mx-auto">
+      <div class="flex items-center justify-between mb-12">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-2 products-title">Featured Products</h2>
+          <p class="text-gray-600 dark:text-gray-300 products-description">Discover our best-selling supplements</p>
+        </div>
+        <a href="#">
+          <button class="px-4 py-2 border rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+            View All
+            <i class="fa fa-arrow-right ml-2"></i>
+          </button>
+        </a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="rounded-2xl border overflow-hidden hover:shadow-lg transition-all duration-300 product-item">
+            <div class="aspect-square overflow-hidden">
+              <img src="public/images/product1.svg" alt="Product 1" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Product 1</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">High-quality supplement for optimal health</p>
+              <div class="flex items-center justify-between">
+                <p class="text-lg font-bold price">$49.99</p>
+                <button class="px-4 py-2 bg-gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl border overflow-hidden hover:shadow-lg transition-all duration-300 product-item">
+            <div class="aspect-square overflow-hidden">
+              <img src="public/images/product2.svg" alt="Product 2" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Product 2</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">High-quality supplement for optimal health</p>
+              <div class="flex items-center justify-between">
+                <p class="text-lg font-bold price">$49.99</p>
+                <button class="px-4 py-2 bg-gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl border overflow-hidden hover:shadow-lg transition-all duration-300 product-item">
+            <div class="aspect-square overflow-hidden">
+              <img src="public/images/product3.svg" alt="Product 3" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Product 3</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">High-quality supplement for optimal health</p>
+              <div class="flex items-center justify-between">
+                <p class="text-lg font-bold price">$49.99</p>
+                <button class="px-4 py-2 bg-gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl border overflow-hidden hover:shadow-lg transition-all duration-300 product-item">
+            <div class="aspect-square overflow-hidden">
+              <img src="public/images/product4.svg" alt="Product 4" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Product 4</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">High-quality supplement for optimal health</p>
+              <div class="flex items-center justify-between">
+                <p class="text-lg font-bold price">$49.99</p>
+                <button class="px-4 py-2 bg-gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl border overflow-hidden hover:shadow-lg transition-all duration-300 product-item">
+            <div class="aspect-square overflow-hidden">
+              <img src="public/images/product5.svg" alt="Product 5" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Product 5</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">High-quality supplement for optimal health</p>
+              <div class="flex items-center justify-between">
+                <p class="text-lg font-bold price">$49.99</p>
+                <button class="px-4 py-2 bg-gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl border overflow-hidden hover:shadow-lg transition-all duration-300 product-item">
+            <div class="aspect-square overflow-hidden">
+              <img src="public/images/product6.svg" alt="Product 6" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Product 6</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">High-quality supplement for optimal health</p>
+              <div class="flex items-center justify-between">
+                <p class="text-lg font-bold price">$49.99</p>
+                <button class="px-4 py-2 bg-gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-primary">
+    <div class="container mx-auto text-center text-white">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 cta-title">Ready to Start Your Wellness Journey?</h2>
+      <p class="text-lg text-white/80 mb-8 max-w-2xl mx-auto cta-description">
+        Join thousands of satisfied customers who have transformed their health with Cultiva100.
+      </p>
+      <a href="#products">
+        <button class="px-6 py-3 bg-white text-primary rounded-lg font-medium hover:bg-gray-100 transition-colors cta-button">
+          Shop Now
+          <i class="fa fa-arrow-right ml-2"></i>
+        </button>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-gradient">Cultiva100</h3>
+          <p class="text-gray-400 mb-4">Premium natural health supplements, scientifically formulated, ethically sourced.</p>
+          <p class="text-sm font-semibold mb-2 footer-social-title">Follow Us</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 footer-links">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+            <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <i class="fa fa-map-marker mt-1 mr-3 text-gray-400"></i>
+              <span class="text-gray-400">36 Purvis Street, #02-06 Singapore 188613</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-phone mr-3 text-gray-400"></i>
+              <span class="text-gray-400">+65 69798752</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-envelope mr-3 text-gray-400"></i>
+              <span class="text-gray-400">e@cultiva100.net</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+          <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and offers.</p>
+          <div class="flex">
+            <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full focus:outline-none">
+            <button class="px-4 py-2 bg-primary text-white rounded-r-lg hover:bg-secondary transition-colors">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <p class="footer-copyright">&copy; 2024 Cultiva100. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Language data
+    const languages = {
+      en: {
+        nav: {
+          home: 'Home',
+          products: 'Products',
+          about: 'About',
+          contact: 'Contact'
+        },
+        hero: {
+          badge: 'Premium Quality',
+          title: 'Premium Natural Health Supplements',
+          description: 'Discover the power of nature with Cultiva100. Scientifically formulated, ethically sourced.',
+          button: 'Shop Now'
+        },
+        features: {
+          title: 'Why Choose Cultiva100',
+          items: [
+            '100% Natural',
+            'Science-Backed',
+            'Global Shipping'
+          ]
+        },
+        about: {
+          title: 'About Cultiva100',
+          description: 'Cultiva100 is dedicated to providing premium natural health supplements that are scientifically formulated and ethically sourced. Our mission is to help you achieve optimal health through the power of nature.',
+          button: 'Learn More'
+        },
+        products: {
+          title: 'Our Products',
+          description: 'Explore our range of premium natural health supplements.',
+          button: 'Add to Cart'
+        },
+        cta: {
+          title: 'Ready to Transform Your Health?',
+          description: 'Join thousands of satisfied customers who have experienced the Cultiva100 difference.',
+          button: 'Shop Now'
+        },
+        footer: {
+          links: {
+            shop: 'Shop',
+            about: 'About Us',
+            contact: 'Contact',
+            blog: 'Blog'
+          },
+          social: 'Follow Us',
+          copyright: '© 2024 Cultiva100. All rights reserved.'
+        },
+        cart: {
+          title: 'Shopping Cart',
+          empty: 'Your cart is empty',
+          total: 'Total:',
+          checkout: 'Checkout'
+        }
+      },
+      zh: {
+        nav: {
+          home: '首页',
+          products: '产品',
+          about: '关于我们',
+          contact: '联系我们'
+        },
+        hero: {
+          badge: '优质品质',
+          title: '优质天然健康补充剂',
+          description: '探索 Cultiva100 的自然力量。科学配方，道德采购。',
+          button: '立即购买'
+        },
+        features: {
+          title: '为什么选择 Cultiva100',
+          items: [
+            '100% 天然',
+            '科学支持',
+            '全球配送'
+          ]
+        },
+        about: {
+          title: '关于 Cultiva100',
+          description: 'Cultiva100 致力于提供科学配方和道德采购的优质天然健康补充剂。我们的使命是通过自然的力量帮助您实现最佳健康状态。',
+          button: '了解更多'
+        },
+        products: {
+          title: '我们的产品',
+          description: '探索我们的优质天然健康补充剂系列。',
+          button: '加入购物车'
+        },
+        cta: {
+          title: '准备好改变您的健康了吗？',
+          description: '加入成千上万已经体验到 Cultiva100 差异的满意客户。',
+          button: '立即购买'
+        },
+        footer: {
+          links: {
+            shop: '购物',
+            about: '关于我们',
+            contact: '联系我们',
+            blog: '博客'
+          },
+          social: '关注我们',
+          copyright: '© 2024 Cultiva100. 保留所有权利。'
+        },
+        cart: {
+          title: '购物车',
+          empty: '您的购物车是空的',
+          total: '总计:',
+          checkout: '结账'
+        }
+      },
+      ja: {
+        nav: {
+          home: 'ホーム',
+          products: '製品',
+          about: '会社概要',
+          contact: 'お問い合わせ'
+        },
+        hero: {
+          badge: 'プレミアム品質',
+          title: 'プレミアム天然健康サプリメント',
+          description: 'Cultiva100 の自然の力を発見してください。科学的に配合され、倫理的に調達されています。',
+          button: '今すぐ購入'
+        },
+        features: {
+          title: 'なぜ Cultiva100 を選ぶのか',
+          items: [
+            '100% 天然',
+            '科学的支持',
+            '世界配送'
+          ]
+        },
+        about: {
+          title: 'Cultiva100 について',
+          description: 'Cultiva100 は、科学的に配合され、倫理的に調達されたプレミアム天然健康サプリメントを提供することに専念しています。私たちの使命は、自然の力を通じてあなたが最適な健康状態を実現するのを助けることです。',
+          button: '詳細を知る'
+        },
+        products: {
+          title: '当社製品',
+          description: '当社のプレミアム天然健康サプリメントの範囲をご覧ください。',
+          button: 'カートに追加'
+        },
+        cta: {
+          title: '健康を変える準備はできていますか？',
+          description: 'Cultiva100 の違いを体験した何千人もの満足しているお客様に加入してください。',
+          button: '今すぐ購入'
+        },
+        footer: {
+          links: {
+            shop: 'ショップ',
+            about: '会社概要',
+            contact: 'お問い合わせ',
+            blog: 'ブログ'
+          },
+          social: 'フォロー',
+          copyright: '© 2024 Cultiva100. 全著作権所有。'
+        },
+        cart: {
+          title: 'ショッピングカート',
+          empty: 'カートは空です',
+          total: '合計:',
+          checkout: 'チェックアウト'
+        }
+      }
+    };
+
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    // Check for saved theme preference or use system preference
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+      themeToggle.innerHTML = '<i class="fa fa-sun-o"></i>';
+    } else {
+      html.classList.remove('dark');
+      themeToggle.innerHTML = '<i class="fa fa-moon-o"></i>';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        themeToggle.innerHTML = '<i class="fa fa-sun-o"></i>';
+      } else {
+        localStorage.setItem('theme', 'light');
+        themeToggle.innerHTML = '<i class="fa fa-moon-o"></i>';
+      }
+    });
+
+    // Language dropdown
+    const languageToggle = document.getElementById('language-toggle');
+    const languageDropdown = document.getElementById('language-dropdown');
+    const languageLinks = languageDropdown.querySelectorAll('a');
+
+    // Get saved language or use default (English)
+    let currentLanguage = localStorage.getItem('language') || 'en';
+
+    // Update page with current language
+    function updateLanguage(lang) {
+      currentLanguage = lang;
+      localStorage.setItem('language', lang);
+      
+      // Update navigation
+      document.querySelectorAll('.nav-link').forEach((link, index) => {
+        const navItems = [lang === 'en' ? 'home' : lang === 'zh' ? 'home' : 'home', 'products', 'about', 'contact'];
+        if (navItems[index]) {
+          link.textContent = languages[lang].nav[navItems[index]];
+        }
+      });
+      
+      // Update hero section
+      document.querySelector('.hero-badge').textContent = languages[lang].hero.badge;
+      document.querySelector('.hero-title').textContent = languages[lang].hero.title;
+      document.querySelector('.hero-description').textContent = languages[lang].hero.description;
+      document.querySelector('.hero-button').textContent = languages[lang].hero.button;
+      
+      // Update features section
+      document.querySelector('.features-title').textContent = languages[lang].features.title;
+      const featureItems = document.querySelectorAll('.feature-item');
+      featureItems.forEach((item, index) => {
+        if (languages[lang].features.items[index]) {
+          item.textContent = languages[lang].features.items[index];
+        }
+      });
+      
+      // Update about section
+      document.querySelector('.about-title').textContent = languages[lang].about.title;
+      document.querySelector('.about-description').textContent = languages[lang].about.description;
+      document.querySelector('.about-button').textContent = languages[lang].about.button;
+      
+      // Update products section
+      document.querySelector('.products-title').textContent = languages[lang].products.title;
+      document.querySelector('.products-description').textContent = languages[lang].products.description;
+      document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.textContent = languages[lang].products.button;
+      });
+      
+      // Update CTA section
+      document.querySelector('.cta-title').textContent = languages[lang].cta.title;
+      document.querySelector('.cta-description').textContent = languages[lang].cta.description;
+      document.querySelector('.cta-button').textContent = languages[lang].cta.button;
+      
+      // Update footer
+      const footerLinks = document.querySelectorAll('.footer-links a');
+      const footerLinkKeys = ['shop', 'about', 'contact', 'blog'];
+      footerLinks.forEach((link, index) => {
+        if (footerLinkKeys[index]) {
+          link.textContent = languages[lang].footer.links[footerLinkKeys[index]];
+        }
+      });
+      document.querySelector('.footer-social-title').textContent = languages[lang].footer.social;
+      document.querySelector('.footer-copyright').textContent = languages[lang].footer.copyright;
+      
+      // Update cart
+      document.querySelector('.cart-title').textContent = languages[lang].cart.title;
+      document.querySelector('.cart-empty').textContent = languages[lang].cart.empty;
+      document.querySelector('.cart-total-label').textContent = languages[lang].cart.total;
+      document.querySelector('.cart-checkout').textContent = languages[lang].cart.checkout;
+    }
+
+    languageToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      languageDropdown.classList.toggle('hidden');
+    });
+
+    // Close language dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!languageToggle.contains(e.target) && !languageDropdown.contains(e.target)) {
+        languageDropdown.classList.add('hidden');
+      }
+    });
+
+    // Language selection
+    languageLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const lang = link.textContent === 'English' ? 'en' : link.textContent === '中文' ? 'zh' : 'ja';
+        updateLanguage(lang);
+        languageDropdown.classList.add('hidden');
+      });
+    });
+
+    // Initialize language
+    updateLanguage(currentLanguage);
+
+    // Shopping cart
+    const cartToggle = document.getElementById('cart-toggle');
+    const cartClose = document.getElementById('cart-close');
+    const cartSidebar = document.getElementById('cart-sidebar');
+    const cartItems = document.getElementById('cart-items');
+    const cartCount = document.getElementById('cart-count');
+    const cartTotal = document.getElementById('cart-total');
+
+    // Cart items array
+    let cart = [];
+
+    // Open cart sidebar
+    cartToggle.addEventListener('click', () => {
+      cartSidebar.classList.remove('translate-x-full');
+    });
+
+    // Close cart sidebar
+    cartClose.addEventListener('click', () => {
+      cartSidebar.classList.add('translate-x-full');
+    });
+
+    // Close cart when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!cartToggle.contains(e.target) && !cartSidebar.contains(e.target) && !cartSidebar.classList.contains('translate-x-full')) {
+        cartSidebar.classList.add('translate-x-full');
+      }
+    });
+
+    // Add to cart functionality
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const productElement = this.closest('.product-item');
+        const productName = productElement.querySelector('h3').textContent;
+        const productPrice = parseFloat(productElement.querySelector('.price').textContent.replace('$', ''));
+
+        // Check if product is already in cart
+        const existingProduct = cart.find(item => item.name === productName);
+        if (existingProduct) {
+          existingProduct.quantity += 1;
+        } else {
+          cart.push({
+            name: productName,
+            price: productPrice,
+            quantity: 1
+          });
+        }
+
+        updateCart();
+      });
+    });
+
+    // Update cart
+    function updateCart() {
+      // Update cart items display
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<div class="text-center py-8 text-gray-500 dark:text-gray-400">Your cart is empty</div>';
+      } else {
+        cartItems.innerHTML = '';
+        cart.forEach(item => {
+          const itemElement = document.createElement('div');
+          itemElement.className = 'flex items-center justify-between mb-4';
+          itemElement.innerHTML = `
+            <div>
+              <h4 class="font-medium">${item.name}</h4>
+              <p class="text-sm text-gray-500 dark:text-gray-400">$${item.price.toFixed(2)} x ${item.quantity}</p>
+            </div>
+            <div class="flex items-center space-x-2">
+              <button class="decrease-quantity p-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded" data-name="${item.name}">
+                <i class="fa fa-minus"></i>
+              </button>
+              <span>${item.quantity}</span>
+              <button class="increase-quantity p-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded" data-name="${item.name}">
+                <i class="fa fa-plus"></i>
+              </button>
+              <button class="remove-item p-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded" data-name="${item.name}">
+                <i class="fa fa-trash"></i>
+              </button>
+            </div>
+          `;
+          cartItems.appendChild(itemElement);
+        });
+
+        // Add event listeners for quantity buttons
+        document.querySelectorAll('.decrease-quantity').forEach(button => {
+          button.addEventListener('click', function() {
+            const productName = this.getAttribute('data-name');
+            const product = cart.find(item => item.name === productName);
+            if (product.quantity > 1) {
+              product.quantity -= 1;
+            } else {
+              cart = cart.filter(item => item.name !== productName);
+            }
+            updateCart();
+          });
+        });
+
+        document.querySelectorAll('.increase-quantity').forEach(button => {
+          button.addEventListener('click', function() {
+            const productName = this.getAttribute('data-name');
+            const product = cart.find(item => item.name === productName);
+            product.quantity += 1;
+            updateCart();
+          });
+        });
+
+        document.querySelectorAll('.remove-item').forEach(button => {
+          button.addEventListener('click', function() {
+            const productName = this.getAttribute('data-name');
+            cart = cart.filter(item => item.name !== productName);
+            updateCart();
+          });
+        });
+      }
+
+      // Update cart count
+      const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+      cartCount.textContent = totalItems;
+
+      // Update cart total
+      const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+      cartTotal.textContent = `$${totalPrice.toFixed(2)}`;
+    }
+
+    // Navigation active state
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+
+    // Update active nav link based on scroll position
+    function updateActiveNav() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= sectionTop - 100) {
+          current = section.getAttribute('id') || '';
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current || (current === '' && link.getAttribute('href') === '#')) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    // Update active nav on scroll
+    window.addEventListener('scroll', updateActiveNav);
+
+    // Update active nav on click
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        if (targetId === '') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+        
+        // Update active class
+        navLinks.forEach(navLink => navLink.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // Initialize active nav
+    updateActiveNav();
+  </script>
+</body>
+</html>
