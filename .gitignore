@@ -58,6 +58,7 @@ node-compile-cache/
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
+.trae/
 .idea/
 *.suo
 *.ntvs*
