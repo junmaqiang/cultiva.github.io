@@ -1,12 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useParams, useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShoppingCart, Menu, Moon, Sun, Globe, User, LogOut, ChevronDown } from 'lucide-react';
+import { Menu, Moon, Sun, Globe, User, LogOut, ChevronDown } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
-import { useCart } from '@/context/CartContext';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -19,7 +18,6 @@ import {
   SheetContent,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { Badge } from '@/components/ui/badge';
 import { siteConfig } from '@/lib/config';
 import { locales, localeNames, getPathWithoutLocale, createLocalizedPath, type Locale } from '@/lib/locale';
 import { translations } from '@/lib/i18n/translations';
@@ -33,7 +31,6 @@ export function Header() {
   const t = translations[language].nav;
   
   const { isDarkMode, toggleDarkMode, user, logout, setLanguage } = useApp();
-  const { cartCount } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const checkActive = (path: string) => {
@@ -52,8 +49,6 @@ export function Header() {
   const navItems = [
     { path: '/', href: `/${locale}`, label: t.home },
     { path: '/products', href: `/${locale}/products`, label: t.products },
-    { path: '/journal', href: `/${locale}/journal`, label: t.journal },
-    { path: '/club', href: `/${locale}/club`, label: t.club },
     { path: '/about', href: `/${locale}/about`, label: t.about },
     { path: '/contact', href: `/${locale}/contact`, label: t.contact },
   ];
@@ -216,20 +211,20 @@ export function Header() {
               </>
             )}
 
-            <Link href={`/${locale}/cart`}>
-              <Button variant="ghost" size="icon" className="relative">
-                <ShoppingCart className="h-5 w-5" />
-                {cartCount > 0 && (
-                  <Badge
-                    variant="destructive"
-                    className="absolute -right-1 -top-1 h-5 w-5 rounded-full p-0 text-xs flex items-center justify-center"
-                  >
-                    {cartCount}
-                  </Badge>
-                )}
-                <span className="sr-only">{t.cart}</span>
-              </Button>
-            </Link>
+            {/*<Link href={`/${locale}/cart`}>*/}
+            {/*  <Button variant="ghost" size="icon" className="relative">*/}
+            {/*    <ShoppingCart className="h-5 w-5" />*/}
+            {/*    {cartCount > 0 && (*/}
+            {/*      <Badge*/}
+            {/*        variant="destructive"*/}
+            {/*        className="absolute -right-1 -top-1 h-5 w-5 rounded-full p-0 text-xs flex items-center justify-center"*/}
+            {/*      >*/}
+            {/*        {cartCount}*/}
+            {/*      </Badge>*/}
+            {/*    )}*/}
+            {/*    <span className="sr-only">{t.cart}</span>*/}
+            {/*  </Button>*/}
+            {/*</Link>*/}
           </div>
         </div>
       </div>

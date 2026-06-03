@@ -1,6 +1,6 @@
 export type Locale = 'en' | 'zh' | 'ja';
 export const locales: Locale[] = ['en', 'zh', 'ja'];
-export const defaultLocale: Locale = 'en';
+export const defaultLocale: Locale = 'zh';
 
 export const localeNames: Record<Locale, string> = {
   en: 'English',

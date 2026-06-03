@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
@@ -37,7 +37,7 @@ export function Footer() {
               </h3>
             )}
             <p className="text-muted-foreground text-sm">
-              {siteConfig.site.description}
+              {t.footer.brandDescription}
             </p>
             <div className="flex space-x-4">
               {siteConfig.social.instagram && (
@@ -77,16 +77,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/journal`} className="text-muted-foreground hover:text-foreground transition-colors">
-                  {t.nav.journal}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/club`} className="text-muted-foreground hover:text-foreground transition-colors">
-                  {t.nav.club}
-                </Link>
-              </li>
-              <li>
                 <Link href={`/${locale}/about`} className="text-muted-foreground hover:text-foreground transition-colors">
                   {t.nav.about}
                 </Link>
@@ -104,18 +94,18 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 mt-0.5 text-muted-foreground flex-shrink-0" />
-                <span className="text-muted-foreground">{t.footer.address}</span>
+                <span className="text-muted-foreground">{siteConfig.contact.address}</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                <a href={`tel:${t.footer.phone}`} className="text-muted-foreground hover:text-foreground transition-colors">
-                  {t.footer.phone}
+                <a href={`tel:${siteConfig.contact.phone}`} className="text-muted-foreground hover:text-foreground transition-colors">
+                  {siteConfig.contact.phone}
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                <a href={`mailto:${t.footer.email}`} className="text-muted-foreground hover:text-foreground transition-colors">
-                  {t.footer.email}
+                <a href={`mailto:${siteConfig.contact.email}`} className="text-muted-foreground hover:text-foreground transition-colors">
+                  {siteConfig.contact.email}
                 </a>
               </li>
             </ul>
@@ -127,28 +117,28 @@ export function Footer() {
               {t.footer.followDescription}
             </p>
             <div className="flex space-x-3">
-              {siteConfig.social.instagram && (
+              {siteConfig.social.weibo && (
                 <a
-                  href={siteConfig.social.instagram}
+                  href={siteConfig.social.weibo}
                   className="w-10 h-10 rounded-full bg-background border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all"
                 >
-                  <Instagram className="h-5 w-5" />
+                  <img src="/weibo.svg" alt="Weibo" className="h-5 w-5 dark:brightness-0 dark:invert" />
                 </a>
               )}
-              {siteConfig.social.facebook && (
+              {siteConfig.social.douyin && (
                 <a
-                  href={siteConfig.social.facebook}
+                  href={siteConfig.social.douyin}
                   className="w-10 h-10 rounded-full bg-background border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all"
                 >
-                  <Facebook className="h-5 w-5" />
+                  <img src="/douyin.svg" alt="Douyin" className="h-5 w-5 dark:brightness-0 dark:invert" />
                 </a>
               )}
-              {siteConfig.social.twitter && (
+              {siteConfig.social.xiaohongshu && (
                 <a
-                  href={siteConfig.social.twitter}
+                  href={siteConfig.social.xiaohongshu}
                   className="w-10 h-10 rounded-full bg-background border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all"
                 >
-                  <Twitter className="h-5 w-5" />
+                  <img src="/xiaohongshu.svg" alt="Xiaohongshu" className="h-5 w-5 dark:brightness-0 dark:invert" />
                 </a>
               )}
             </div>

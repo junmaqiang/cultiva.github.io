@@ -1,23 +1,19 @@
 'use client';
 
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { ArrowRight, Leaf, FlaskConical, Globe, Star } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { ShopByFocus } from '@/components/layout/ShopByFocus';
-import { ProductCard } from '@/components/shared/ProductCard';
 import { Button } from '@/components/ui/button';
 import { useApp } from '@/context/AppContext';
-import { products } from '@/lib/products';
 import { type Locale } from '@/lib/locale';
 
 export default function Home() {
   const params = useParams();
   const locale = (params.locale as Locale) || 'en';
-  const { t, language } = useApp();
+  const { t } = useApp();
 
   const features = [
     {
@@ -127,8 +123,6 @@ export default function Home() {
           </div>
         </section>
 
-        <ShopByFocus language={language} />
-
         <section className="py-20 bg-background">
           <div className="page-container">
             <div className="text-center mb-16">
@@ -215,28 +209,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20 bg-background">
-          <div className="page-container">
-            <div className="flex items-center justify-between mb-12">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-2">{t.home.products.title}</h2>
-                <p className="text-muted-foreground">{t.home.hero.discoverProducts}</p>
-              </div>
-              <Link href={`/${locale}/products`}>
-                <Button variant="ghost" className="gap-2">
-                  {t.home.hero.viewAll}
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {products.slice(0, 6).map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
             </div>
           </div>
         </section>

@@ -49,6 +49,9 @@ export interface SiteConfig {
 
   // 社交媒体链接
   social: {
+    weibo?: string;
+    douyin?: string;
+    xiaohongshu?: string;
     instagram?: string;
     facebook?: string;
     twitter?: string;
@@ -65,8 +68,8 @@ export const devConfig: SiteConfig = {
   },
 
   contact: {
-    address: '36 Purvis Street, #02-06 Singapore 188613',
-    phone: '+65 69798752',
+    address: '36 Purvis Street，#02-06 Singapore 188613',
+    phone: '+65 86451691',
     email: 'e@cultiva100.net',
   },
 
@@ -77,7 +80,7 @@ export const devConfig: SiteConfig = {
   },
 
   footer: {
-    copyright: '© {year} Cultiva100. All rights reserved.',
+    copyright: '©{year} Cultiva100. All rights reserved.',
     showYear: true,
     termsOfService: '/terms',
     privacyPolicy: '/privacy',
@@ -96,10 +99,13 @@ export const devConfig: SiteConfig = {
   },
 
   social: {
-    instagram: '#',
-    facebook: '#',
-    twitter: '#',
-    linkedin: '#',
+    weibo: 'https://weibo.com/cultiva100',
+    douyin: 'https://v.douyin.com/cultiva100/',
+    xiaohongshu: 'https://www.xiaohongshu.com/user/profile/cultiva100',
+    instagram: 'https://instagram.com/cultiva100',
+    facebook: 'https://www.facebook.com/cultiva100',
+    twitter: 'https://twitter.com/cultiva100/',
+    linkedin: 'https://www.linkedin.com/company/cultiva100',
   },
 };
 
@@ -113,7 +119,7 @@ export const prodConfig: SiteConfig = {
 
   contact: {
     address: '36 Purvis Street, #02-06 Singapore 188613',
-    phone: '+65 69798752',
+    phone: '+65 86451691',
     email: 'e@cultiva100.net',
   },
 
@@ -124,7 +130,7 @@ export const prodConfig: SiteConfig = {
   },
 
   footer: {
-    copyright: '© {year} Cultiva100. All rights reserved.',
+    copyright: '©{year} Cultiva100. All rights reserved.',
     showYear: true,
     termsOfService: '/terms',
     privacyPolicy: '/privacy',
@@ -143,10 +149,13 @@ export const prodConfig: SiteConfig = {
   },
 
   social: {
-    instagram: '#',
-    facebook: '#',
-    twitter: '#',
-    linkedin: '#',
+    weibo: 'https://weibo.com/cultiva100',
+    douyin: 'https://v.douyin.com/cultiva100/',
+    xiaohongshu: 'https://www.xiaohongshu.com/user/profile/cultiva100',
+    instagram: 'https://instagram.com/cultiva100',
+    facebook: 'https://www.facebook.com/cultiva100',
+    twitter: 'https://twitter.com/cultiva100/',
+    linkedin: 'https://www.linkedin.com/company/cultiva100',
   },
 };
 

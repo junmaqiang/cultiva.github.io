@@ -1,8 +1,8 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useParams } from 'next/navigation';
-import { Language, translations, Translation, languageCodes } from '@/lib/i18n/translations';
+import { translations, Language, languageCodes } from '@/lib/i18n/translations';
 import { type Locale } from '@/lib/locale';
 
 interface User {
@@ -13,6 +13,7 @@ interface User {
 interface AppContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   t: any;
   isDarkMode: boolean;
   toggleDarkMode: () => void;
@@ -28,7 +29,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const params = useParams();
   const urlLocale = (params.locale as Locale) || 'en';
   
-  const [language, setLanguage] = useState<Language>(urlLocale);
+  const [language, setLanguage] = useState<Language>(urlLocale as Language);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -36,7 +37,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const urlLang = urlLocale === 'zh' ? 'zh' : urlLocale === 'ja' ? 'ja' : 'en';
     if (languageCodes.includes(urlLang)) {
-      setLanguage(urlLang);
+      setLanguage(urlLang as Language);
       localStorage.setItem('language', urlLang);
     }
   }, [urlLocale]);
@@ -98,6 +99,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       value={{
         language,
         setLanguage,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         t: translations[language] as any,
         isDarkMode,
         toggleDarkMode,

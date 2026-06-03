@@ -1,19 +1,15 @@
 'use client';
 
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Leaf, FlaskConical, Globe, Star } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { ShopByFocus } from '@/components/layout/ShopByFocus';
-import { ProductCard } from '@/components/shared/ProductCard';
 import { Button } from '@/components/ui/button';
 import { useApp } from '@/context/AppContext';
-import { products } from '@/lib/products';
 
 export default function Home() {
-  const { t, language } = useApp();
+  const { t } = useApp();
 
   const features = [
     {
@@ -121,8 +117,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <ShopByFocus language={language} />
 
         <section className="py-20 bg-background">
           <div className="page-container">
@@ -236,9 +230,11 @@ export default function Home() {
               </Link>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {products.slice(0, 6).map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
+              <Link href="/products">
+                <div className="p-8 rounded-2xl border bg-card hover:shadow-lg transition-all duration-300 text-center">
+                  <p className="text-muted-foreground">{t.home.hero.discoverProducts}</p>
+                </div>
+              </Link>
             </div>
           </div>
         </section>

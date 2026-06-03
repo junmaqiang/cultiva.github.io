@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,11 +10,12 @@ import { Footer } from '@/components/layout/Footer';
 import { TrustChain } from '@/components/product/TrustChain';
 import { useApp } from '@/context/AppContext';
 import { useCart } from '@/context/CartContext';
-import { getProductById } from '@/lib/products';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { type Locale } from '@/lib/locale';
+import { translations } from '@/lib/i18n/translations';
+import { Product } from '@/context/CartContext';
 
 export default function ProductDetail() {
   const params = useParams();
@@ -26,8 +27,49 @@ export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
   const [isFavorite, setIsFavorite] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
+  const [product, setProduct] = useState<Product | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const product = getProductById(productId);
+  useEffect(() => {
+    const fetchProduct = async () => {
+      setIsLoading(true);
+      const res = await fetch(`/api/products?id=${productId}`);
+      if (res.ok) {
+        const data = await res.json();
+        setProduct(data);
+      } else {
+        setProduct(null);
+      }
+      setIsLoading(false);
+    };
+    fetchProduct();
+  }, [productId]);
+
+  const getCategoryLabel = (category: string) => {
+    const tCommon = translations[language].common;
+    switch (category) {
+      case 'ergothioneine':
+        return tCommon.ergothioneine;
+      case 'equol':
+        return tCommon.equol;
+      case 'ginsenoside':
+        return tCommon.ginsenoside;
+      default:
+        return category;
+    }
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1 flex items-center justify-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600"></div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   if (!product) {
     return (
@@ -88,7 +130,7 @@ export default function ProductDetail() {
               {t.products.back}
             </Link>
             <span>/</span>
-            <span className="text-muted-foreground">{product.category}</span>
+            <span className="text-muted-foreground">{getCategoryLabel(product.category)}</span>
             <span>/</span>
             <span>{getProductName()}</span>
           </div>
@@ -126,7 +168,7 @@ export default function ProductDetail() {
             <div className="space-y-6">
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <Badge variant="secondary">{product.category}</Badge>
+                  <Badge variant="secondary">{getCategoryLabel(product.category)}</Badge>
                   {product.inStock && (
                     <Badge className="bg-green-100 text-green-700 hover:bg-green-100">
                       {t.products.inStock}

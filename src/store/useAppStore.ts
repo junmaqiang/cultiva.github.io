@@ -88,6 +88,6 @@ export const useAppStore = create<AppState>()(
   )
 );
 
-export const getTranslation = (language: Language): any => {
+export const getTranslation = (language: Language): typeof translations.en => {
   return translations[language];
 };

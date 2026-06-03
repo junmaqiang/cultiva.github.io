@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { Globe, Award, Users, MapPin } from 'lucide-react';
 import { Language } from '@/lib/i18n/translations';
 
@@ -77,17 +76,6 @@ const defaultExperts: Expert[] = [
 ];
 
 export function TrustChain({ language, productSources = defaultSources }: TrustChainProps) {
-  const getLocalized = <T extends { name: string; nameZh: string; nameJa: string }>(item: T) => {
-    switch (language) {
-      case 'zh':
-        return { name: item.nameZh };
-      case 'ja':
-        return { name: item.nameJa };
-      default:
-        return { name: item.name };
-    }
-  };
-
   const getLocalizedText = (text: string, textZh: string, textJa: string) => {
     switch (language) {
       case 'zh':

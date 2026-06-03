@@ -208,11 +208,7 @@ export const translations = {
       loggingIn: 'Logging in...'
     },
     footer: {
-      address: '36 Purvis Street, #02-06 Singapore 188613',
-      phone: '+65 69798752',
-      email: 'e@cultiva100.net',
-      website: 'https://www.cultiva100.net',
-      copyright: '© {year} Cultiva100. All rights reserved.',
+      copyright: '©{year} Cultiva100.net All rights reserved.',
       quickLinks: 'Quick Links',
       followUs: 'Follow Us',
       brandDescription: 'Premium natural health supplements, scientifically formulated for your wellness.',
@@ -238,11 +234,9 @@ export const translations = {
       priceHigh: 'Price: High to Low',
       highestRated: 'Highest Rated',
       all: 'All',
-      supplements: 'Supplements',
-      herbs: 'Herbs',
-      vitamins: 'Vitamins',
-      digestive: 'Digestive',
-      beauty: 'Beauty'
+      ergothioneine: 'Ergothioneine',
+      equol: 'Equol',
+      ginsenoside: 'Ginsenoside',
     },
     about: {
       title: 'Our Story',
@@ -441,11 +435,11 @@ export const translations = {
   },
   zh: {
     nav: {
-      home: '首页',
-      products: '产品',
+      home: '网站首页',
+      products: '产品列表',
       about: '关于我们',
-      journal: '专栏',
-      club: '会员',
+      journal: '健康专栏',
+      club: '会员中心',
       contact: '联系我们',
       cart: '购物车',
       login: '登录',
@@ -500,8 +494,8 @@ export const translations = {
     home: {
       hero: {
         title: '高端天然保健品',
-        subtitle: '探索自然的力量，Cultiva100 为您带来科学配方、道德采购的优质产品。',
-        cta: '立即选购',
+        subtitle: '探索自然之力，Cultiva100 为您带来科学配方、道德采购的优质产品。',
+        cta: '查看产品',
         premiumQuality: '优质品质',
         happyCustomers: '满意客户',
         premiumProducts: '优质产品',
@@ -509,12 +503,12 @@ export const translations = {
         discoverProducts: '发现我们的畅销保健品',
         viewAll: '查看全部',
         readyToStart: '准备好开始您的健康之旅了吗？',
-        joinThousands: '加入数千名通过 Cultiva100 改变健康的满意客户。'
+        joinThousands: '赶紧查看适合自己的 Cultiva100 产品吧'
       },
       features: {
         title: '为什么选择 Cultiva100',
         items: [
-          { title: '100% 天然', desc: '来自可信来源的纯净原料' },
+          { title: '100% 可控', desc: '来自安全可控的纯净原料' },
           { title: '科学验证', desc: '基于科学研究配方' },
           { title: '全球配送', desc: '全球范围内送货上门' }
         ]
@@ -534,7 +528,7 @@ export const translations = {
       philosophy: {
         title: 'Cultiva100 理念',
         subtitle: '精密科学与自然智慧的完美融合',
-        description: '在 Cultiva100，我们相信健康的未来在于尖端生物技术与大自然久经时间考验的疗愈之道的交汇点。我们的新加坡实验室将最严格的科学标准与对来自世界各地纯净产地的天然成分的尊重完美结合。'
+        description: 'Cultiva100相信健康的未来在于尖端生物技术与大自然久经时间考验的疗愈之道的交汇点。我们的新加坡实验室将最严格的科学标准与对来自世界各地纯净产地的天然成分的尊重完美结合。'
       }
     },
     product: {
@@ -642,15 +636,11 @@ export const translations = {
       loggingIn: '登录中...'
     },
     footer: {
-      address: '36 Purvis Street, #02-06 Singapore 188613',
-      phone: '+65 69798752',
-      email: 'e@cultiva100.net',
-      website: 'https://www.cultiva100.net',
-      copyright: '© {year} Cultiva100. 保留所有权利。',
+      copyright: '©{year} Cultiva100.net 保留所有权利',
       quickLinks: '快速链接',
       followUs: '关注我们',
       brandDescription: '高端天然保健品，为您的健康科学配方。',
-      followDescription: '关注我们，获取最新健康资讯。',
+      followDescription: '关注后，能获取更新资讯',
       termsOfService: '服务条款',
       privacyPolicy: '隐私政策'
     },
@@ -672,11 +662,9 @@ export const translations = {
       priceHigh: '价格：高到低',
       highestRated: '最高评分',
       all: '全部',
-      supplements: '保健品',
-      herbs: '草本',
-      vitamins: '维生素',
-      digestive: '消化',
-      beauty: '美容'
+      ergothioneine: '麦角硫因',
+      equol: '雌马酚',
+      ginsenoside: '人参皂苷',
     },
     about: {
       title: '我们的故事',
@@ -686,7 +674,7 @@ export const translations = {
       valuesSubtitle: '每一款产品都承载着我们对品质和创新的承诺',
       whySingapore: '为什么在新加坡？',
       whySingaporeDesc1: '新加坡，这座亚洲的科技与创新之都，拥有全球最严格的食品安全法规之一。我们选择在这里建立Cultiva100，正是因为它代表了"科学严谨"与"国际标准"的完美结合。',
-      whySingaporeDesc2: '从36 Purvis Street的实验室开始，我们的团队将最前沿的生物技术与自然的智慧融合，为全球用户带来真正值得信赖的健康产品。',
+      whySingaporeDesc2: '从实验室开始，我们的团队将最前沿的生物技术与自然的智慧融合，为全球用户带来真正值得信赖的健康产品。',
       hsaRegulation: 'HSA监管',
       hsaRegulationDesc: '新加坡卫生科学局',
       gmpCertification: 'GMP认证',
@@ -803,12 +791,12 @@ export const translations = {
       title: '联系我们',
       subtitle: '我们期待听到您的声音，无论是问题、建议还是合作意向',
       quickContacts: '快速联系',
+      productInquiry: '售前咨询',
+      productInquiryDesc: '了解产品成分、用法用量',
       orderInquiry: '订单咨询',
       orderInquiryDesc: '查询订单状态、物流信息',
-      productInquiry: '产品咨询',
-      productInquiryDesc: '了解产品成分、用法用量',
       afterSales: '售后服务',
-      afterSalesDesc: '退换货、投诉建议',
+      afterSalesDesc: '货运状态、投诉建议',
       sendMessage: '给我们留言',
       messageSent: '消息已发送！',
       messageSentDesc: '我们会尽快回复您',
@@ -1076,11 +1064,7 @@ export const translations = {
       loggingIn: 'ログイン中...'
     },
     footer: {
-      address: '36 Purvis Street, #02-06 Singapore 188613',
-      phone: '+65 69798752',
-      email: 'e@cultiva100.net',
-      website: 'https://www.cultiva100.net',
-      copyright: '© {year} Cultiva100. All rights reserved.',
+      copyright: '©{year} Cultiva100.net All rights reserved.',
       quickLinks: 'クイックリンク',
       followUs: 'フォローする',
       brandDescription: 'プレミアム天然健康サプリメント、あなたのウェルネスのために科学的に配合されています。',
@@ -1106,11 +1090,9 @@ export const translations = {
       priceHigh: '価格：高い順',
       highestRated: '最高評価',
       all: 'すべて',
-      supplements: 'サプリメント',
-      herbs: 'ハーブ',
-      vitamins: 'ビタミン',
-      digestive: '消化',
-      beauty: '美容'
+      ergothioneine: 'エルゴチオネイン',
+      equol: 'エクオール',
+      ginsenoside: 'ジンセノサイド',
     },
     about: {
       title: '私たちの物語',

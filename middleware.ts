@@ -22,8 +22,8 @@ export function middleware(request: NextRequest) {
     const languages = acceptLanguage.split(',').map(lang => lang.split(';')[0]);
     for (const lang of languages) {
       const langCode = lang.split('-')[0];
-      if (locales.includes(langCode as any)) {
-        preferredLocale = langCode as any;
+      if (locales.includes(langCode as typeof locales[number])) {
+        preferredLocale = langCode as typeof locales[number];
         break;
       }
     }
