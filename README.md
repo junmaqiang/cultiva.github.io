@@ -35,139 +35,99 @@ pnpm start
 
 ### 部署到 GitHub Pages
 
-**方式 A：使用 GitHub Actions 自动部署（推荐）**
+#### 前提条件
 
-项目根目录创建 `.github/workflows/deploy.yml`：
+1. 确保项目已推送到 GitHub 仓库
+2. 仓库名称格式：`<username>.github.io`（自定义域名）或任意名称（如 `cultiva100-website`）
 
-```yaml
-name: Deploy to GitHub Pages
+#### 方式 A：使用 GitHub Actions 自动部署（推荐）
 
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+项目已内置 GitHub Actions 配置，只需完成以下步骤：
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+1. **启用 GitHub Pages**
+   - 进入仓库 → **Settings** → **Pages**
+   - 在 **Build and deployment** 部分：
+     - **Source** 选择 `GitHub Actions`
+   
+2. **配置权限**
+   - 进入仓库 → **Settings** → **Actions** → **General**
+   - 在 **Workflow permissions** 部分：
+     - 选择 `Read and write permissions`
+     - 勾选 `Allow GitHub Actions to create and approve pull requests`
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+3. **触发部署**
+   - 推送代码到 `main` 分支即可自动触发部署
+   - 或在 **Actions** 标签页手动运行 `Deploy to GitHub Pages` workflow
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-      
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'pnpm'
-      
-      - name: Install dependencies
-        run: pnpm install
-      
-      - name: Build
-        run: pnpm build
-        env:
-          NODE_ENV: production
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: out
+4. **查看部署状态**
+   - 部署完成后访问 `https://<username>.github.io/<repo-name>/`
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-```
+#### 方式 B：手动部署
 
-**方式 B：静态导出手动部署**
-
-由于 GitHub Pages 不支持服务端 API，需要将 API 数据内嵌到前端：
-
-1. 修改 `next.config.ts` 添加静态导出配置：
-
-```typescript
-const nextConfig: NextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '*',
-        pathname: '/**',
-      },
-    ],
-  },
-  // 如果使用自定义域名，取消注释
-  // trailingSlash: true,
-};
-```
-
-2. 将 `src/app/api/products/route.ts` 的数据迁移到静态 JSON 文件：
-
-创建 `src/lib/products-data.json`：
-
-```json
-[
-  {
-    "id": "1",
-    "name": "Product Name",
-    "price": 99.00,
-    "image": "/images/product-1.jpg"
-  }
-]
-```
-
-3. 修改 `src/lib/md-parser.ts` 从 JSON 读取数据：
-
-```typescript
-import productsData from './products-data.json';
-import { Product } from '@/context/CartContext';
-
-export function getAllProducts(): Product[] {
-  return productsData as Product[];
-}
-```
-
-4. 重新构建并部署：
+1. **构建项目**
 
 ```bash
-pnpm build
-# 将 out 目录内容推送到 gh-pages 分支
+NODE_ENV=production pnpm build
 ```
 
-**GitHub Pages 部署步骤：**
+构建产物将生成在 `out` 目录。
 
-1. 推送代码到 GitHub 仓库
-2. 进入仓库 Settings → Pages
-3. Source 选择 "Deploy from a branch"
-4. Branch 选择 `gh-pages` / `/(root)`
-5. 等待部署完成
+2. **部署到 gh-pages 分支**
 
-**注意事项：**
-- GitHub Pages 不支持服务端 API，必须使用静态导出
-- 自定义域名需要在 DNS 添加 CNAME 记录指向 `<username>.github.io`
-- 部署后访问 `https://<username>.github.io/<repo-name>/`
+```bash
+# 安装 gh-pages 工具（首次部署）
+pnpm add -D gh-pages
+
+# 部署到 gh-pages 分支
+pnpm exec gh-pages -d out
+```
+
+3. **配置 GitHub Pages**
+   - 进入仓库 → **Settings** → **Pages**
+   - **Source** 选择 `Deploy from a branch`
+   - **Branch** 选择 `gh-pages` / `/(root)`
+   - 点击 **Save**
+
+#### 自定义域名配置（可选）
+
+1. **在 GitHub Pages 设置中添加域名**
+   - 进入仓库 → **Settings** → **Pages**
+   - 在 **Custom domain** 输入框中输入域名（如 `cultiva100.net`）
+   - 点击 **Save**
+
+2. **配置 DNS 解析**
+   - 在域名管理后台添加以下记录：
+     - **CNAME**: `www` → `<username>.github.io`
+     - **A**: 根域名 → GitHub Pages IP 地址（可选，需查询最新 IP）
+
+3. **启用 HTTPS**
+   - 在 GitHub Pages 设置中勾选 `Enforce HTTPS`（需要等待 DNS 解析生效）
+
+#### 项目配置说明
+
+项目已预配置 `next.config.ts`，生产环境自动启用静态导出：
+
+```typescript
+output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
+```
+
+#### 注意事项
+
+- **GitHub Pages 限制**：不支持服务端 API，所有数据需静态导出
+- **图片优化**：项目已配置 `images.unoptimized: true` 支持静态导出
+- **路由配置**：多语言路由 `/[locale]/` 在静态导出后正常工作
+- **缓存清理**：部署后若样式异常，可强制刷新浏览器缓存（Ctrl+Shift+R）
+- **部署日志**：可在 **Actions** 标签页查看部署日志，排查失败原因
+
+#### 部署检查清单
+
+- [ ] 项目已推送到 GitHub 仓库
+- [ ] GitHub Actions 权限已配置为 `Read and write`
+- [ ] `NODE_ENV=production` 构建正常
+- [ ] `out` 目录生成完整
+- [ ] GitHub Pages Source 配置正确
+- [ ] 自定义域名 DNS 解析已生效（如使用）
+- [ ] HTTPS 已启用（推荐）
 
 ### 部署检查清单
 

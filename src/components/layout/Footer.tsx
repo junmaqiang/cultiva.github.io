@@ -148,10 +148,10 @@ export function Footer() {
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
           <p>{copyrightText}</p>
           <div className="mt-2 space-x-4">
-            <Link href={siteConfig.footer.termsOfService} className="hover:text-foreground transition-colors">
+            <Link href={`/${locale}${siteConfig.footer.termsOfService}`} className="hover:text-foreground transition-colors">
               {t.footer.termsOfService}
             </Link>
-            <Link href={siteConfig.footer.privacyPolicy} className="hover:text-foreground transition-colors">
+            <Link href={`/${locale}${siteConfig.footer.privacyPolicy}`} className="hover:text-foreground transition-colors">
               {t.footer.privacyPolicy}
             </Link>
           </div>

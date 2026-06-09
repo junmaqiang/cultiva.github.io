@@ -25,6 +25,8 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  // GitHub Pages 部署配置
+  output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
 };
 
 export default nextConfig;
