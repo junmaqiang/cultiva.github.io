@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   keywords: [
     siteConfig.site.name,
     'health supplements',
-    'natural products',
+    'premium quality products',
     'vitamins',
     'herbs',
     'wellness',
@@ -39,9 +39,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: '/favicon.ico', type: 'image/x-icon' },
       { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
-    shortcut: '/favicon.svg',
+    shortcut: '/favicon.ico',
   },
 };
 

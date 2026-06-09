@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export function generatePageTitle(key: string, name?: string): string {
   const titles: Record<string, string> = {
-    home: 'Cultiva100 - Premium Natural Health Supplements',
+    home: 'Cultiva100 - Premium Quality Health Supplements',
     products: 'Products - Cultiva100',
     about: 'About Us - Cultiva100',
     lab: 'Cultiva Lab - Scientific Research',

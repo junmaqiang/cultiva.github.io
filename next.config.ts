@@ -4,7 +4,7 @@ import path from 'path';
 const isProduction = process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
-  allowedDevOrigins: ['*.dev.coze.site'],
+  allowedDevOrigins: ['*.cultiva100.net', 'localhost:3000', '127.0.0.1:3000'],
   images: {
     remotePatterns: [
       {

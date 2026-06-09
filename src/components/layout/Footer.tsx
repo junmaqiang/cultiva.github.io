@@ -10,7 +10,7 @@ import { type Locale } from '@/lib/locale';
 const footerTranslations = {
   en: {
     copyright: '©{year} Cultiva100.net All rights reserved.',
-    brandDescription: 'Premium natural health supplements, scientifically formulated for your wellness.',
+    brandDescription: 'Premium supplements, scientifically formulated.',
     quickLinks: 'Quick Links',
     followUs: 'Follow Us',
     followDescription: 'Follow us for the latest updates on health and wellness.',
@@ -23,7 +23,7 @@ const footerTranslations = {
   },
   zh: {
     copyright: '©{year} Cultiva100.net 保留所有权利。',
-    brandDescription: '优质天然健康补充剂，科学配方为您的健康服务。',
+    brandDescription: '优质补充剂，配方更科学。',
     quickLinks: '快速链接',
     followUs: '关注我们',
     followDescription: '关注我们获取最新健康资讯。',
@@ -36,7 +36,7 @@ const footerTranslations = {
   },
   ja: {
     copyright: '©{year} Cultiva100.net 全著作権所有。',
-    brandDescription: 'プレミアム天然ヘルスサプリメント、科学的に配合されたウェルネス製品。',
+    brandDescription: 'プレミアムサプリメント、科学的に配合。',
     quickLinks: 'クイックリンク',
     followUs: 'フォロー',
     followDescription: '最新の健康情報を入手するためにフォローしてください。',

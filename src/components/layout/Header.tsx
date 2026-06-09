@@ -156,7 +156,7 @@ export function Header() {
           <div className="flex items-center space-x-[15px]">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="px-[23px] py-3">
+                <Button variant="ghost" size="icon" className="px-[30px] py-3">
                   <Globe className="h-4 w-4" />
                   <span className="text-xs font-semibold ml-0.5">
                     {locale === 'zh' ? '中' : locale === 'ja' ? 'JP' : 'EN'}
@@ -177,7 +177,7 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button variant="ghost" size="icon" className="px-[23px] py-3" onClick={toggleDarkMode}>
+            <Button variant="ghost" size="icon" className="px-[30px] py-3" onClick={toggleDarkMode}>
               {isDarkMode ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
               <span className="text-xs font-semibold ml-0.5">
                 {isDarkMode ? 'D' : 'L'}

@@ -50,16 +50,17 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    // 检查用户会话
     const checkUserSession = async () => {
       try {
         const response = await fetch('/api/auth/verify-code');
-        const data = await response.json();
-        if (data.user) {
-          setUser(data.user);
+        if (response.ok) {
+          const data = await response.json();
+          if (data.user) {
+            setUser(data.user);
+          }
         }
       } catch (error) {
-        console.error('Failed to check user session:', error);
+        console.debug('Session check skipped in static export mode');
       } finally {
         setIsLoading(false);
       }

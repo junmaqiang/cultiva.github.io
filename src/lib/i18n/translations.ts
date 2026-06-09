@@ -19,8 +19,8 @@ export const translations = {
     },
     meta: {
       home: {
-        title: 'Cultiva100 - Premium Natural Health Supplements',
-        description: 'Discover the power of nature with Cultiva100. Scientifically formulated, ethically sourced health supplements from Singapore.'
+        title: 'Cultiva100 - Premium Quality Health Supplements',
+        description: 'Discover the power of quality with Cultiva100. Scientifically formulated, ethically sourced health supplements from Singapore.'
       },
       products: {
         title: 'Products - Cultiva100',
@@ -65,14 +65,14 @@ export const translations = {
     },
     home: {
       hero: {
-        title: 'Premium Natural Health Supplements',
-        subtitle: 'Discover the power of nature with Cultiva100. Scientifically formulated, ethically sourced.',
+        title: 'Premium Quality Health Supplements',
+        subtitle: 'Cultiva100 only provides high-quality health supplements.',
         cta: 'Shop Now',
         premiumQuality: 'Premium Quality',
         happyCustomers: 'Happy Customers',
         premiumProducts: 'Premium Products',
         countriesServed: 'Countries Served',
-        discoverProducts: 'Discover our best-selling supplements',
+        discoverProducts: 'About Our Story',
         viewAll: 'View All',
         readyToStart: 'Ready to Start Your Wellness Journey?',
         joinThousands: 'Join thousands of satisfied customers who have transformed their health with Cultiva100.'
@@ -80,7 +80,7 @@ export const translations = {
       features: {
         title: 'Why Choose Cultiva100',
         items: [
-          { title: '100% Natural', desc: 'Pure ingredients from trusted sources' },
+          { title: '100% Quality', desc: 'Pure ingredients from trusted sources' },
           { title: 'Science-Backed', desc: 'Formulated with scientific research' },
           { title: 'Global Shipping', desc: 'Delivered to your doorstep worldwide' }
         ]
@@ -99,8 +99,8 @@ export const translations = {
       },
       philosophy: {
         title: 'The Cultiva100 Philosophy',
-        subtitle: 'Where precision science meets nature\'s wisdom',
-        description: 'At Cultiva100, we believe the future of wellness lies at the intersection of cutting-edge biotechnology and nature\'s time-tested remedies. Our Singapore-based laboratories combine the strictest scientific standards with a reverence for natural ingredients sourced from pristine environments around the world.'
+        subtitle: 'Where precision science meets quality\'s wisdom',
+        description: 'At Cultiva100, we believe the future of wellness lies at the intersection of cutting-edge biotechnology and quality\'s time-tested remedies. Our Singapore-based laboratories combine the strictest scientific standards with a reverence for quality ingredients sourced from pristine environments around the world.'
       }
     },
     product: {
@@ -211,7 +211,7 @@ export const translations = {
       copyright: '©{year} Cultiva100.net All rights reserved.',
       quickLinks: 'Quick Links',
       followUs: 'Follow Us',
-      brandDescription: 'Premium natural health supplements, scientifically formulated for your wellness.',
+      brandDescription: 'Premium quality health supplements, scientifically formulated for your wellness.',
       followDescription: 'Follow us for the latest updates on health and wellness.',
       termsOfService: 'Terms of Service',
       privacyPolicy: 'Privacy Policy'
@@ -240,13 +240,13 @@ export const translations = {
     },
     about: {
       title: 'Our Story',
-      subtitle: 'From Singapore, using the power of science and nature to create healthier lives worldwide',
+      subtitle: 'From Singapore, using the power of science and quality to create healthier lives worldwide',
       location: 'Singapore · 36 Purvis Street',
       values: 'Our Values',
       valuesSubtitle: 'Every product carries our commitment to quality and innovation',
       whySingapore: 'Why Singapore?',
       whySingaporeDesc1: 'Singapore, this Asian capital of technology and innovation, has one of the world\'s strictest food safety regulations. We chose to establish Cultiva100 here precisely because it represents the perfect combination of "scientific rigor" and "international standards."',
-      whySingaporeDesc2: 'Starting from our laboratory at 36 Purvis Street, our team combines cutting-edge biotechnology with nature\'s wisdom to bring truly trustworthy health products to users worldwide.',
+      whySingaporeDesc2: 'Starting from our laboratory at 36 Purvis Street, our team combines cutting-edge biotechnology with quality\'s wisdom to bring truly trustworthy health products to users worldwide.',
       hsaRegulation: 'HSA Regulation',
       hsaRegulationDesc: 'Singapore Health Sciences Authority',
       gmpCertification: 'GMP Certification',
@@ -422,7 +422,7 @@ export const translations = {
     },
     lab: {
       title: 'Cultiva Lab',
-      subtitle: 'Where Science Meets Nature',
+      subtitle: 'Where Science Meets Quality',
       description: 'Our state-of-the-art research facilities in Singapore combine cutting-edge biotechnology with rigorous scientific standards to develop premium health supplements that deliver measurable results.',
       certifications: 'Quality Certifications',
       research: 'Published Research',
@@ -447,8 +447,8 @@ export const translations = {
     },
     meta: {
       home: {
-        title: 'Cultiva100 - 高端天然保健品',
-        description: '探索 Cultiva100 的自然力量。来自新加坡的科学配方、道德采购的健康补充剂。'
+        title: 'Cultiva100 - 高端品质保健品',
+        description: '探索 Cultiva100 的品质力量。来自新加坡的科学配方、道德采购的健康补充剂。'
       },
       products: {
         title: '产品 - Cultiva100',
@@ -493,14 +493,14 @@ export const translations = {
     },
     home: {
       hero: {
-        title: '高端天然保健品',
-        subtitle: '探索自然之力，Cultiva100 为您带来科学配方、道德采购的优质产品。',
+        title: '高端品质保健品',
+        subtitle: 'Cultiva100 只提供高品质保健品。',
         cta: '查看产品',
         premiumQuality: '优质品质',
         happyCustomers: '满意客户',
         premiumProducts: '优质产品',
         countriesServed: '服务国家',
-        discoverProducts: '发现我们的畅销保健品',
+        discoverProducts: '关于我们的资料',
         viewAll: '查看全部',
         readyToStart: '准备好开始您的健康之旅了吗？',
         joinThousands: '赶紧查看适合自己的 Cultiva100 产品吧'
@@ -527,8 +527,8 @@ export const translations = {
       },
       philosophy: {
         title: 'Cultiva100 理念',
-        subtitle: '精密科学与自然智慧的完美融合',
-        description: 'Cultiva100相信健康的未来在于尖端生物技术与大自然久经时间考验的疗愈之道的交汇点。我们的新加坡实验室将最严格的科学标准与对来自世界各地纯净产地的天然成分的尊重完美结合。'
+        subtitle: '精密科学与品质智慧的完美融合',
+        description: 'Cultiva100相信健康的未来在于尖端生物技术与大品质久经时间考验的疗愈之道的交汇点。我们的新加坡实验室将最严格的科学标准与对来自世界各地纯净产地的品質成分的尊重完美结合。'
       }
     },
     product: {
@@ -639,7 +639,7 @@ export const translations = {
       copyright: '©{year} Cultiva100.net 保留所有权利',
       quickLinks: '快速链接',
       followUs: '关注我们',
-      brandDescription: '高端天然保健品，为您的健康科学配方。',
+      brandDescription: '高端品质保健品，为您的健康科学配方。',
       followDescription: '关注后，能获取更新资讯',
       termsOfService: '服务条款',
       privacyPolicy: '隐私政策'
@@ -668,13 +668,13 @@ export const translations = {
     },
     about: {
       title: '我们的故事',
-      subtitle: '从新加坡出发，用科学与自然的力量，为全球用户创造更健康的生活',
+      subtitle: '从新加坡出发，用科学与品质的力量，为全球用户创造更健康的生活',
       location: '新加坡 · 36 Purvis Street',
       values: '我们的价值观',
       valuesSubtitle: '每一款产品都承载着我们对品质和创新的承诺',
       whySingapore: '为什么在新加坡？',
       whySingaporeDesc1: '新加坡，这座亚洲的科技与创新之都，拥有全球最严格的食品安全法规之一。我们选择在这里建立Cultiva100，正是因为它代表了"科学严谨"与"国际标准"的完美结合。',
-      whySingaporeDesc2: '从实验室开始，我们的团队将最前沿的生物技术与自然的智慧融合，为全球用户带来真正值得信赖的健康产品。',
+      whySingaporeDesc2: '从实验室开始，我们的团队将最前沿的生物技术与品质的智慧融合，为全球用户带来真正值得信赖的健康产品。',
       hsaRegulation: 'HSA监管',
       hsaRegulationDesc: '新加坡卫生科学局',
       gmpCertification: 'GMP认证',
@@ -850,7 +850,7 @@ export const translations = {
     },
     lab: {
       title: '科研中心',
-      subtitle: '科学与自然的交汇',
+      subtitle: '科学与品质的交汇',
       description: '我们在新加坡的先进研究设施将尖端生物技术与严格的科学标准相结合，开发出能够带来可衡量效果的高端健康补充剂。',
       certifications: '质量认证',
       research: '已发表研究',
@@ -875,8 +875,8 @@ export const translations = {
     },
     meta: {
       home: {
-        title: 'Cultiva100 - プレミアム天然健康サプリメント',
-        description: 'Cultiva100で自然の力を発見しましょう。シンガポール発の科学的に配合され、倫理的に調達された健康サプリメント。'
+        title: 'Cultiva100 - プレミアム品質健康サプリメント',
+        description: 'Cultiva100で品質の力を発見しましょう。シンガポール発の科学的に配合され、倫理的に調達された健康サプリメント。'
       },
       products: {
         title: '製品 - Cultiva100',
@@ -921,14 +921,14 @@ export const translations = {
     },
     home: {
       hero: {
-        title: 'プレミアム天然健康サプリメント',
-        subtitle: 'Cultiva100で自然の力を発見しましょう。科学的に配合され、倫理的に調達されています。',
+        title: 'プレミアム品質健康サプリメント',
+        subtitle: 'Cultiva100は高品質のヘルスサプリメントのみを提供します。',
         cta: '今すぐ購入',
         premiumQuality: 'プレミアム品質',
         happyCustomers: '満足のお客様',
         premiumProducts: 'プレミアム製品',
         countriesServed: 'サービス提供国',
-        discoverProducts: 'ベストセラーサプリメントを発見',
+        discoverProducts: '私たちについて',
         viewAll: 'すべて表示',
         readyToStart: 'ウェルネスの旅を始める準備はできましたか？',
         joinThousands: 'Cultiva100で健康を変えた数千人の満足のお客様に加わりましょう。'
@@ -936,7 +936,7 @@ export const translations = {
       features: {
         title: 'Cultiva100を選ぶ理由',
         items: [
-          { title: '100% 天然', desc: '信頼できる供給元からの純粋な成分' },
+          { title: '100% 品质', desc: '信頼できる供給元からの純粋な成分' },
           { title: '科学的裏付け', desc: '科学研究に基づいて配合' },
           { title: 'グローバル配送', desc: '世界中のご自宅までお届け' }
         ]
@@ -955,8 +955,8 @@ export const translations = {
       },
       philosophy: {
         title: 'Cultiva100の哲学',
-        subtitle: '精密科学と自然の英知が出会う場所',
-        description: 'Cultiva100では、ウェルネスの未来は最先端のバイオテクノロジーと自然の時の試練に耐えた療法の交差点にあると信じています。私たちのシンガポールの研究室は、世界中の手つかずの環境から調達された天然成分への敬意とともに、最も厳しい科学基準を組み合わせています。'
+        subtitle: '精密科学と品質の英知が出会う場所',
+        description: 'Cultiva100では、ウェルネスの未来は最先端のバイオテクノロジーと品質の時の試練に耐えた療法の交差点にあると信じています。私たちのシンガポールの研究室は、世界中の手つかずの環境から調達された品質成分への敬意とともに、最も厳しい科学基準を組み合わせています。'
       }
     },
     product: {
@@ -1067,7 +1067,7 @@ export const translations = {
       copyright: '©{year} Cultiva100.net All rights reserved.',
       quickLinks: 'クイックリンク',
       followUs: 'フォローする',
-      brandDescription: 'プレミアム天然健康サプリメント、あなたのウェルネスのために科学的に配合されています。',
+      brandDescription: 'プレミアム品質健康サプリメント、あなたのウェルネスのために科学的に配合されています。',
       followDescription: '健康とウェルネスの最新情報をフォローしてください。',
       termsOfService: '利用規約',
       privacyPolicy: 'プライバシーポリシー'
@@ -1096,13 +1096,13 @@ export const translations = {
     },
     about: {
       title: '私たちの物語',
-      subtitle: 'シンガポールから、科学と自然の力で、世界中の人々のより健康な生活を創造する',
+      subtitle: 'シンガポールから、科学と品質の力で、世界中の人々のより健康な生活を創造する',
       location: 'シンガポール · 36 Purvis Street',
       values: '私たちの価値観',
       valuesSubtitle: 'すべての製品には、品質とイノベーションへのコミットメントが込められています',
       whySingapore: 'なぜシンガポール？',
       whySingaporeDesc1: 'シンガポールは、アジアの技術とイノベーションの首都であり、世界で最も厳しい食品安全規制の1つを持っています。私たちがここにCultiva100を設立したのは、まさにそれが「科学的厳密さ」と「国際基準」の完璧な組み合わせを表しているからです。',
-      whySingaporeDesc2: '36 Purvis Streetの研究室から始まり、私たちのチームは最先端のバイオテクノロジーと自然の英知を組み合わせて、世界中のユーザーに真に信頼できる健康製品をお届けします。',
+      whySingaporeDesc2: '36 Purvis Streetの研究室から始まり、私たちのチームは最先端のバイオテクノロジーと品質の英知を組み合わせて、世界中のユーザーに真に信頼できる健康製品をお届けします。',
       hsaRegulation: 'HSA規制',
       hsaRegulationDesc: 'シンガポール保健科学局',
       gmpCertification: 'GMP認証',
@@ -1278,7 +1278,7 @@ export const translations = {
     },
     lab: {
       title: 'Cultiva Lab',
-      subtitle: '科学と自然が出会う場所',
+      subtitle: '科学と品質が出会う場所',
       description: 'シンガポールにある私たちの最先端研究施設は、最先端のバイオテクノロジーと厳格な科学基準を組み合わせ、測定可能な効果をもたらすプレミアム健康サプリメントを開発しています。',
       certifications: '品質認証',
       research: '発表された研究',

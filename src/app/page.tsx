@@ -62,7 +62,7 @@ export default function Home() {
               <div className="relative">
                 <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/hero.jpg"
+                    src="/images/hero.png"
                     alt="Premium Supplements"
                     width={800}
                     height={800}
@@ -161,12 +161,12 @@ export default function Home() {
                     {/* about2：方版 1:1 */}
                     <div className="rounded-2xl overflow-hidden shadow-lg">
                       <Image
-                        src="/images/about2.jpg"
-                        alt="About us 2"
-                        width={400}
-                        height={400}
-                        className="w-full h-auto transition-transform duration-500 hover:scale-105"
-                      />
+                      src="https://neeko-copilot.bytedance.net/api/text_to_image?prompt=scientific%20laboratory%20research%20microscope%20biology%20cells%20analysis%20clean%20modern&image_size=square"
+                      alt="Scientific research laboratory"
+                      width={400}
+                      height={400}
+                      className="w-full h-auto transition-transform duration-500 hover:scale-105"
+                    />
                     </div>
                   </div>
                   {/* 右列 */}

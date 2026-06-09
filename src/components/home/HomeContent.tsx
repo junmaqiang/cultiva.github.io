@@ -34,47 +34,51 @@ export function HomeContent({ locale }: HomeContentProps) {
 
   return (
     <main className="flex-1">
-      <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white dark:from-emerald-950/20 dark:to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 text-sm font-medium">
-                <Star className="h-4 w-4 mr-1" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50/50 via-white to-white dark:from-emerald-950/10 dark:via-background dark:to-background">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 -left-20 w-72 h-72 bg-emerald-200/30 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="space-y-8">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-100/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 text-sm font-medium backdrop-blur-sm border border-emerald-200/50 dark:border-emerald-800/30">
+                <Star className="h-4 w-4 mr-2" />
                 {t.home.hero.premiumQuality}
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight font-serif">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight font-serif text-foreground">
                 {t.home.hero.title}
               </h1>
-              <p className="text-lg text-muted-foreground max-w-xl">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
                 {t.home.hero.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href={`/${locale}/products`}>
-                  <Button size="lg" className="gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white">
+                  <Button 
+                    size="lg" 
+                    className="group gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/30 transition-all duration-300"
+                  >
                     {t.home.hero.cta}
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link href={`/${locale}/about`}>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="gap-2 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all duration-300"
+                  >
+                    {t.home.hero.discoverProducts}
                   </Button>
                 </Link>
               </div>
-            </div>
-            <div className="relative">
-              <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/hero.jpg"
-                  alt="Premium Supplements"
-                  width={800}
-                  height={800}
-                  className="w-full h-full object-cover"
-                  priority
-                />
-              </div>
-              <div className="absolute -bottom-6 -left-6 bg-background border rounded-2xl p-4 shadow-lg">
-                <div className="flex items-center gap-3">
-                  <div className="flex -space-x-2">
-                    {[1, 2, 3, 4].map((i) => (
+              <div className="flex items-center gap-8 pt-4">
+                <div className="flex items-center gap-2">
+                  <div className="flex -space-x-1">
+                    {[1, 2, 3].map((i) => (
                       <div
                         key={i}
-                        className="w-10 h-10 rounded-full border-2 border-background overflow-hidden"
+                        className="w-8 h-8 rounded-full border-2 border-white dark:border-background overflow-hidden"
                       >
                         <Image
                           src={`/images/user${i}.jpg`}
@@ -86,11 +90,22 @@ export function HomeContent({ locale }: HomeContentProps) {
                       </div>
                     ))}
                   </div>
-                  <div>
-                    <p className="font-semibold">10K+</p>
-                    <p className="text-xs text-muted-foreground">{t.home.hero.happyCustomers}</p>
-                  </div>
+                  <span className="text-sm text-muted-foreground">
+                    <span className="font-semibold text-foreground">10K+</span> {t.home.hero.happyCustomers}
+                  </span>
                 </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl shadow-black/10 dark:shadow-black/20 w-[90%] mx-auto">
+                <Image
+                  src="/images/hero.png"
+                  alt="Premium Supplements"
+                  width={800}
+                  height={800}
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -156,8 +171,8 @@ export function HomeContent({ locale }: HomeContentProps) {
                   </div>
                   <div className="rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                      src="/images/about2.jpg"
-                      alt="About us 2"
+                      src="https://neeko-copilot.bytedance.net/api/text_to_image?prompt=scientific%20laboratory%20research%20microscope%20biology%20cells%20analysis%20clean%20modern&image_size=square"
+                      alt="Scientific research laboratory"
                       width={400}
                       height={400}
                       className="w-full h-auto transition-transform duration-500 hover:scale-105"
