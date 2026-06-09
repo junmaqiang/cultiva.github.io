@@ -79,7 +79,7 @@ NODE_ENV=production pnpm build
 pnpm add -D gh-pages
 
 # 部署到 gh-pages 分支
-pnpm exec gh-pages -d out
+pnpm exec gh-pages -d dist
 ```
 
 3. **配置 GitHub Pages**
