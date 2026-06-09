@@ -220,7 +220,7 @@ export default function Home() {
             <div className="flex items-center justify-between mb-12">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">{t.home.products.title}</h2>
-                <p className="text-muted-foreground">{t.home.hero.discoverProducts}</p>
+                <p className="text-muted-foreground">{t.home.products.description}</p>
               </div>
               <Link href="/products">
                 <Button variant="ghost" className="gap-2">

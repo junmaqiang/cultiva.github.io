@@ -138,12 +138,12 @@ export const prodConfig: SiteConfig = {
 
   logo: {
     text: 'Cultiva100',
-    showImage: true,
+    showImage: false,
     imageUrl: '/images/logo.svg',
   },
 
   features: {
-    enableAuth: true,         // 生产环境开启登录
+    enableAuth: false,         // 生产环境关闭登录
     enablePayments: true,     // 生产环境开启支付
     enableAIAdvisor: true,    // 生产环境开启 AI 顾问
   },

@@ -86,7 +86,8 @@ export const translations = {
         ]
       },
       products: {
-        title: 'Featured Products'
+        title: 'Featured Products',
+        description: 'Discover our best-selling supplements'
       },
       promises: {
         title: 'The 100% Promise',
@@ -363,12 +364,12 @@ export const translations = {
       title: 'Contact Us',
       subtitle: 'We look forward to hearing from you, whether it\'s questions, suggestions or cooperation intentions',
       quickContacts: 'Quick Contacts',
-      orderInquiry: 'Order Inquiry',
-      orderInquiryDesc: 'Check order status, logistics information',
       productInquiry: 'Product Inquiry',
       productInquiryDesc: 'Learn about product ingredients, usage dosage',
+      orderInquiry: 'Order Inquiry',
+      orderInquiryDesc: 'Check order status, logistics information',
       afterSales: 'After-Sales Service',
-      afterSalesDesc: 'Returns, complaints and suggestions',
+      afterSalesDesc: 'Shipping status, complaints and suggestions',
       sendMessage: 'Send Us a Message',
       messageSent: 'Message Sent!',
       messageSentDesc: 'We will reply to you as soon as possible',
@@ -514,7 +515,8 @@ export const translations = {
         ]
       },
       products: {
-        title: '精选产品'
+        title: '精选产品',
+        description: '探索我们的畅销产品'
       },
       promises: {
         title: '100% 承诺',
@@ -942,7 +944,8 @@ export const translations = {
         ]
       },
       products: {
-        title: 'おすすめ製品'
+        title: 'おすすめ製品',
+        description: '人気のサプリメントを発見'
       },
       promises: {
         title: '100% 約束',
@@ -1219,12 +1222,12 @@ export const translations = {
       title: 'お問い合わせ',
       subtitle: 'ご質問、ご提案、またはご協力の意向など、お気軽にお問い合わせください',
       quickContacts: 'クイックコンタクト',
-      orderInquiry: 'ご注文に関するお問い合わせ',
-      orderInquiryDesc: 'ご注文状況、物流情報を確認',
       productInquiry: '製品に関するお問い合わせ',
       productInquiryDesc: '製品成分、使用量について学ぶ',
+      orderInquiry: 'ご注文に関するお問い合わせ',
+      orderInquiryDesc: 'ご注文状況、物流情報を確認',
       afterSales: 'アフターサービス',
-      afterSalesDesc: '返品、苦情、ご提案',
+      afterSalesDesc: '配送状況、苦情、ご提案',
       sendMessage: 'メッセージを送信',
       messageSent: 'メッセージが送信されました！',
       messageSentDesc: 'できるだけ早くご返信いたします',
