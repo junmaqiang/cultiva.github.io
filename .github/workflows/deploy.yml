@@ -7,7 +7,6 @@ on:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-  NODE_ENV: production
 
 permissions:
   contents: read
@@ -43,9 +42,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: pnpm build
-        env:
-          NODE_ENV: production
+        run: NODE_ENV=production pnpm build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
