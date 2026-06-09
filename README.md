@@ -292,9 +292,3 @@ footer: {
 - **图标**: Lucide React
 - **状态管理**: Zustand
 - **国际化**: next-intl
-
-## 📧 联系方式
-
-- 邮箱: e@cultiva100.net
-- 地址: 36 Purvis Street, #02-06 Singapore 188613
-- 电话: +65 86451691
