@@ -66,10 +66,11 @@ export function Header() {
           <Link href={`/${locale}`} className="mr-6 flex items-center space-x-2">
             {siteConfig.logo.showImage && siteConfig.logo.imageUrl ? (
               <Image
-                src={siteConfig.logo.imageUrl}
+                src={isDarkMode && siteConfig.logo.darkImageUrl ? siteConfig.logo.darkImageUrl : siteConfig.logo.imageUrl}
                 alt={siteConfig.logo.text}
-                width={32}
-                height={32}
+                width={160}
+                height={40}
+                className="transition-colors duration-300"
               />
             ) : (
               <span className="font-bold text-xl bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
@@ -142,10 +143,11 @@ export function Header() {
           <Link href={`/${locale}`} className="mr-6 flex items-center space-x-2 md:hidden">
             {siteConfig.logo.showImage && siteConfig.logo.imageUrl ? (
               <Image
-                src={siteConfig.logo.imageUrl}
+                src={isDarkMode && siteConfig.logo.darkImageUrl ? siteConfig.logo.darkImageUrl : siteConfig.logo.imageUrl}
                 alt={siteConfig.logo.text}
-                width={32}
-                height={32}
+                width={160}
+                height={40}
+                className="transition-colors duration-300"
               />
             ) : (
               <span className="font-bold text-xl bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">

@@ -38,6 +38,7 @@ export interface SiteConfig {
     text: string;
     showImage: boolean;
     imageUrl?: string;
+    darkImageUrl?: string;
   };
 
   // 功能开关
@@ -63,7 +64,7 @@ export interface SiteConfig {
 export const devConfig: SiteConfig = {
   site: {
     name: 'cultiva100',
-    url: 'https://www.cultiva100.net',
+    url: 'https://cultiva100.net',
     description: 'Singapore\'s Precision Wellness, Cultivated for Longevity.',
   },
 
@@ -88,8 +89,9 @@ export const devConfig: SiteConfig = {
 
   logo: {
     text: 'Cultiva100',
-    showImage: false,
-    imageUrl: '/images/logo.svg',
+    showImage: true,
+    imageUrl: '/images/logo-light.png',
+    darkImageUrl: '/images/logo-dark.png',
   },
 
   features: {
@@ -100,11 +102,11 @@ export const devConfig: SiteConfig = {
 
   social: {
     weibo: 'https://weibo.com/cultiva100',
-    douyin: 'https://v.douyin.com/cultiva100/',
+    douyin: 'https://v.douyin.com/cultiva100',
     xiaohongshu: 'https://www.xiaohongshu.com/user/profile/cultiva100',
     instagram: 'https://instagram.com/cultiva100',
     facebook: 'https://www.facebook.com/cultiva100',
-    twitter: 'https://twitter.com/cultiva100/',
+    twitter: 'https://twitter.com/cultiva100',
     linkedin: 'https://www.linkedin.com/company/cultiva100',
   },
 };
@@ -113,7 +115,7 @@ export const devConfig: SiteConfig = {
 export const prodConfig: SiteConfig = {
   site: {
     name: 'cultiva100',
-    url: 'https://www.cultiva100.net',
+    url: 'https://cultiva100.net',
     description: 'Singapore\'s Precision Wellness, Cultivated for Longevity.',
   },
 
@@ -138,8 +140,9 @@ export const prodConfig: SiteConfig = {
 
   logo: {
     text: 'Cultiva100',
-    showImage: false,
-    imageUrl: '/images/logo.svg',
+    showImage: true,
+    imageUrl: '/images/logo-light.png',
+    darkImageUrl: '/images/logo-dark.png',
   },
 
   features: {
@@ -150,11 +153,11 @@ export const prodConfig: SiteConfig = {
 
   social: {
     weibo: 'https://weibo.com/cultiva100',
-    douyin: 'https://v.douyin.com/cultiva100/',
+    douyin: 'https://v.douyin.com/cultiva100',
     xiaohongshu: 'https://www.xiaohongshu.com/user/profile/cultiva100',
     instagram: 'https://instagram.com/cultiva100',
     facebook: 'https://www.facebook.com/cultiva100',
-    twitter: 'https://twitter.com/cultiva100/',
+    twitter: 'https://twitter.com/cultiva100',
     linkedin: 'https://www.linkedin.com/company/cultiva100',
   },
 };

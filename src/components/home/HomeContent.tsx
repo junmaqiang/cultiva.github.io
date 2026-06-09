@@ -39,13 +39,9 @@ export function HomeContent({ locale }: HomeContentProps) {
           <div className="absolute top-1/4 -left-20 w-72 h-72 bg-emerald-200/30 rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl"></div>
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+        <div className="page-container py-8 md:py-12 lg:py-16">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="space-y-8">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-100/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 text-sm font-medium backdrop-blur-sm border border-emerald-200/50 dark:border-emerald-800/30">
-                <Star className="h-4 w-4 mr-2" />
-                {t.home.hero.premiumQuality}
-              </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight font-serif text-foreground">
                 {t.home.hero.title}
               </h1>

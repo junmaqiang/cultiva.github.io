@@ -37,13 +37,9 @@ export default function Home() {
 
       <main className="flex-1">
         <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white dark:from-emerald-950/20 dark:to-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+          <div className="page-container py-20 lg:py-32">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 text-sm font-medium">
-                  <Star className="h-4 w-4 mr-1" />
-                  {t.home.hero.premiumQuality}
-                </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight font-serif">
                   {t.home.hero.title}
                 </h1>
