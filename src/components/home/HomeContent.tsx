@@ -167,7 +167,7 @@ export function HomeContent({ locale }: HomeContentProps) {
                   </div>
                   <div className="rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                      src="https://neeko-copilot.bytedance.net/api/text_to_image?prompt=scientific%20laboratory%20research%20microscope%20biology%20cells%20analysis%20clean%20modern&image_size=square"
+                      src="/images/about2.jpg"
                       alt="Scientific research laboratory"
                       width={400}
                       height={400}
