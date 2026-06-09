@@ -1,9 +1,9 @@
 import type { NextConfig } from 'next';
 import path from 'path';
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 const nextConfig: NextConfig = {
-  // outputFileTracingRoot: path.resolve(__dirname, '../../'),  // Uncomment and add 'import path from "path"' if needed
-  /* config options here */
   allowedDevOrigins: ['*.dev.coze.site'],
   images: {
     remotePatterns: [
@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    unoptimized: true,
   },
   turbopack: {
     root: path.resolve(__dirname),
@@ -25,8 +26,8 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
   },
-  // GitHub Pages 部署配置
-  output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
+  trailingSlash: true,
+  output: isProduction ? 'export' : undefined,
 };
 
 export default nextConfig;
