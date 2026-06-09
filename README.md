@@ -1,6 +1,4 @@
-# Cultiva100.net 官网
-
-新加坡高端保健品品牌 Cultiva100 的官方网站，采用 Next.js 15 + TypeScript + Tailwind CSS 构建。
+# 官网
 
 ## 🚀 快速开始
 
@@ -35,139 +33,7 @@ pnpm build
 pnpm start
 ```
 
-## 🚀 生产部署
-
-### 方式一：使用 Docker 部署
-
-项目根目录已包含 `Dockerfile`，支持容器化部署。
-
-```bash
-# 构建 Docker 镜像
-docker build -t cultivating100:latest .
-
-# 运行容器
-docker run -d -p 3000:3000 --name cultivating100 cultivating100:latest
-```
-
-**环境变量配置：**
-
-```bash
-# 生产环境变量示例
-NODE_ENV=production
-PORT=3000
-HOSTNAME=0.0.0.0
-```
-
-**使用 Docker Compose（可选）：**
-
-在项目根目录创建 `docker-compose.yml`：
-
-```yaml
-version: '3.8'
-services:
-  app:
-    build: .
-    ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=production
-    restart: unless-stopped
-```
-
-### 方式二：使用 PM2 部署
-
-适用于 Linux 服务器的无容器部署。
-
-```bash
-# 全局安装 PM2
-npm install -g pm2
-
-# 构建项目
-pnpm build
-
-# 使用 PM2 启动
-pm2 start pnpm --name "cultiva100" -- start
-
-# 保存 PM2 进程列表
-pm2 save
-
-# 设置开机自启
-pm2 startup
-```
-
-**PM2 配置文件 `ecosystem.config.js`：**
-
-```javascript
-module.exports = {
-  apps: [{
-    name: 'cultiva100',
-    script: 'pnpm',
-    args: 'start',
-    env: {
-      NODE_ENV: 'production',
-      PORT: 3000,
-    },
-    instances: 1,
-    autorestart: true,
-    watch: false,
-    max_memory_restart: '1G',
-  }],
-};
-```
-
-### 方式三：部署到 Vercel（推荐）
-
-Vercel 是 Next.js 官方推荐的部署平台。
-
-```bash
-# 安装 Vercel CLI
-npm install -g vercel
-
-# 登录 Vercel
-vercel login
-
-# 部署到生产环境
-vercel --prod
-```
-
-**环境变量配置（Vercel Dashboard）：**
-
-1. 进入项目 Settings → Environment Variables
-2. 添加以下变量：
-   - `NODE_ENV` = `production`
-   - 其他自定义环境变量
-
-### 方式四：部署到 Nginx 反向代理后
-
-```bash
-# 构建项目
-pnpm build
-
-# 在后台运行
-nohup pnpm start > /var/log/cultiva100.log 2>&1 &
-
-# 配置 Nginx 反向代理
-```
-
-**Nginx 配置示例：**
-
-```nginx
-server {
-    listen 80;
-    server_name www.cultiva100.net;
-
-    location / {
-        proxy_pass http://127.0.0.1:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-    }
-}
-```
-
-### 方式五：部署到 GitHub Pages
+### 部署到 GitHub Pages
 
 **方式 A：使用 GitHub Actions 自动部署（推荐）**
 
@@ -314,16 +180,6 @@ pnpm build
 - [ ] 日志监控已配置
 - [ ] 备份策略已制定
 
-### 性能优化
-
-```bash
-# 分析生产包大小
-pnpm build --analyze
-
-# 启用 Strict Mode
-NODE_ENV=production pnpm start
-```
-
 ### 常见问题
 
 **Q: 部署后样式异常？**
@@ -380,7 +236,7 @@ A: 检查 `middleware.ts` 配置和服务器环境变量。
 ```typescript
 site: {
   name: 'cultiva100',           // 站点名称
-  url: 'https://www.cultiva100.net',  // 站点URL
+  url: 'https://cultiva100.net',  // 站点URL
   description: 'Singapore\'s Precision Wellness...',  // 站点描述
 }
 ```
@@ -424,74 +280,6 @@ footer: {
   termsOfService: '/terms',      // 服务条款链接
   privacyPolicy: '/privacy',     // 隐私政策链接
 }
-```
-
-#### 6. 社交媒体链接
-
-```typescript
-social: {
-  instagram: 'https://instagram.com/cultiva100',  // Instagram
-  facebook: 'https://facebook.com/cultiva100',    // Facebook
-  twitter: 'https://twitter.com/cultiva100',      // Twitter
-  linkedin: 'https://linkedin.com/company/cultiva100',  // LinkedIn
-}
-```
-
-#### 7. 功能开关
-
-```typescript
-features: {
-  enableAuth: true,         // 启用登录功能
-  enablePayments: true,     // 启用在线支付
-  enableAIAdvisor: true,    // 启用AI健康顾问
-}
-```
-
-### 环境配置
-
-项目支持多环境配置：
-
-- **开发环境**: `NODE_ENV=development`
-- **生产环境**: `NODE_ENV=production`
-
-环境变量文件：
-- `.env` - 默认环境变量
-- `.env.dev` - 开发环境（可选）
-- `.env.prod` - 生产环境（可选）
-
-## 🌐 国际化
-
-### 支持语言
-
-- English (`en`) - 英语
-- 简体中文 (`zh`) - 中文
-- 日本語 (`ja`) - 日语
-
-### URL 路由
-
-```
-/           → 默认语言（重定向到/en）
-/en         → 英语
-/zh         → 简体中文
-/ja         → 日语
-```
-
-### 添加翻译
-
-翻译文件位于 `src/lib/i18n/translations.ts`，按语言组织：
-
-```typescript
-export const translations: Record<Locale, Translation> = {
-  en: {
-    // 英语翻译
-  },
-  zh: {
-    // 中文翻译
-  },
-  ja: {
-    // 日语翻译
-  },
-};
 ```
 
 ## 🎨 视觉风格
@@ -544,34 +332,6 @@ export const translations: Record<Locale, Translation> = {
 - **图标**: Lucide React
 - **状态管理**: Zustand
 - **国际化**: next-intl
-
-## 📝 开发规范
-
-### Commit 格式
-
-```
-type(scope): description
-
-示例：
-feat(auth): 添加邮箱验证码登录
-fix(footer): 修复社交媒体链接配置
-docs(readme): 更新配置说明
-```
-
-### Type 类型
-
-- `feat` - 新功能
-- `fix` - 修复 bug
-- `docs` - 文档更新
-- `style` - 样式调整
-- `refactor` - 代码重构
-- `test` - 测试用例
-- `ci` - CI/CD 配置
-- `chore` - 杂务
-
-## 📄 许可证
-
-MIT License
 
 ## 📧 联系方式
 
