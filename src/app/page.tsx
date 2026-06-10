@@ -211,30 +211,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 bg-background">
-          <div className="page-container">
-            <div className="flex items-center justify-between mb-12">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-2">{t.home.products.title}</h2>
-                <p className="text-muted-foreground">{t.home.products.description}</p>
-              </div>
-              <Link href="/products">
-                <Button variant="ghost" className="gap-2">
-                  {t.home.hero.viewAll}
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Link href="/products">
-                <div className="p-8 rounded-2xl border bg-card hover:shadow-lg transition-all duration-300 text-center">
-                  <p className="text-muted-foreground">{t.home.hero.discoverProducts}</p>
-                </div>
-              </Link>
-            </div>
-          </div>
-        </section>
-
         <section className="py-20 bg-gradient-to-r from-emerald-900 to-teal-900 text-white">
           <div className="page-container text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">{t.home.hero.readyToStart}</h2>
