@@ -7,11 +7,11 @@ export function generateStaticParams() {
   return locales.map(locale => ({ locale }));
 }
 
-export default function PrivacyPage({ params }: { params: { locale: string } }) {
+export default function PrivacyPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <PrivacyContent locale={params.locale} />
+      <PrivacyContent />
       <Footer />
     </div>
   );

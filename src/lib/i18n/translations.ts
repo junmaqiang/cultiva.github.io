@@ -61,6 +61,14 @@ export const translations = {
       product: {
         title: '{{name}} - Cultiva100',
         description: 'Discover {{name}}. Premium quality, scientifically formulated health supplement.'
+      },
+      terms: {
+        title: 'Terms of Service - Cultiva100',
+        description: 'Read Cultiva100\'s Terms of Service. Understand your rights and obligations when using our website and purchasing our products.'
+      },
+      privacy: {
+        title: 'Privacy Policy - Cultiva100',
+        description: 'Read Cultiva100\'s Privacy Policy. Understand how we collect, use, and protect your personal information.'
       }
     },
     home: {
@@ -432,6 +440,32 @@ export const translations = {
       wantToLearnMore: 'Want to learn more?',
       wantToLearnMoreDesc: 'Explore our products to see how science translates into wellness benefits',
       browseProducts: 'Browse Products'
+    },
+    terms: {
+      title: 'Terms of Service',
+      description: 'Read our terms of service to understand your rights and obligations when using our website.',
+      acceptance: 'Acceptance of Terms',
+      acceptanceDesc: 'By using our website, you agree to be bound by these terms of service. If you do not agree, please do not use our website.',
+      usage: 'Usage Policy',
+      usageDesc: 'You may use our website for personal, non-commercial purposes. You must not misuse or disrupt our services.',
+      term: 'Term',
+      termDesc: 'These terms remain in effect until terminated by either party. We may terminate your access if you violate these terms.',
+      modifications: 'Modifications',
+      modificationsDesc: 'We may update these terms from time to time. We will notify you of significant changes.'
+    },
+    privacy: {
+      title: 'Privacy Policy',
+      description: 'Your privacy is our priority. Learn how we protect your personal information.',
+      infoCollection: 'Information Collection',
+      infoCollectionDesc: 'We collect personal information such as name, email address, and shipping details when you create an account or make a purchase. We also collect usage data to improve our services.',
+      infoUsage: 'Information Usage',
+      infoUsageDesc: 'Your information is used to process orders, provide customer support, and personalize your experience. We do not sell your personal information to third parties.',
+      infoSharing: 'Information Sharing',
+      infoSharingDesc: 'We may share your information with trusted partners who assist us in providing services, such as payment processors and shipping companies. These partners are required to protect your information.',
+      userRights: 'User Rights',
+      userRightsDesc: 'You have the right to access, correct, or delete your personal information. Contact us to exercise these rights.',
+      contact: 'Contact Us',
+      contactDesc: 'If you have any questions about our privacy practices, please contact us at privacy@cultiva100.net.'
     }
   },
   zh: {
@@ -490,6 +524,14 @@ export const translations = {
       product: {
         title: '{{name}} - Cultiva100',
         description: '探索 {{name}}。高品质、科学配方的健康补充剂。'
+      },
+      terms: {
+        title: '服务条款 - Cultiva100',
+        description: '阅读 Cultiva100 的服务条款。了解您使用我们网站和购买产品时的权利和义务。'
+      },
+      privacy: {
+        title: '隐私政策 - Cultiva100',
+        description: '阅读 Cultiva100 的隐私政策。了解我们如何收集、使用和保护您的个人信息。'
       }
     },
     home: {
@@ -861,6 +903,32 @@ export const translations = {
       wantToLearnMore: '想要了解更多？',
       wantToLearnMoreDesc: '探索我们的产品，了解科学如何转化为健康益处',
       browseProducts: '浏览产品'
+    },
+    terms: {
+      title: '服务条款',
+      description: '阅读我们的服务条款，了解您使用我们网站时的权利和义务。',
+      acceptance: '接受条款',
+      acceptanceDesc: '通过使用我们的网站，您同意受这些服务条款的约束。如果您不同意，请不要使用我们的网站。',
+      usage: '使用政策',
+      usageDesc: '您可以将我们的网站用于个人非商业目的。您不得滥用或干扰我们的服务。',
+      term: '期限',
+      termDesc: '这些条款在任何一方终止前保持有效。如果您违反这些条款，我们可能会终止您的访问权限。',
+      modifications: '修改',
+      modificationsDesc: '我们可能会不时更新这些条款。我们会通知您重大变更。'
+    },
+    privacy: {
+      title: '隐私政策',
+      description: '您的隐私是我们的首要任务。了解我们如何保护您的个人信息。',
+      infoCollection: '信息收集',
+      infoCollectionDesc: '当您创建账户或进行购买时，我们会收集姓名、电子邮件地址和配送详情等个人信息。我们还会收集使用数据以改进我们的服务。',
+      infoUsage: '信息使用',
+      infoUsageDesc: '您的信息用于处理订单、提供客户支持和个性化您的体验。我们不会将您的个人信息出售给第三方。',
+      infoSharing: '信息共享',
+      infoSharingDesc: '我们可能会与帮助我们提供服务的可信合作伙伴共享您的信息，例如支付处理器和运输公司。这些合作伙伴必须保护您的信息。',
+      userRights: '用户权利',
+      userRightsDesc: '您有权访问、更正或删除您的个人信息。请联系我们行使这些权利。',
+      contact: '联系我们',
+      contactDesc: '如果您对我们的隐私做法有任何疑问，请通过 privacy@cultiva100.net 联系我们。'
     }
   },
   ja: {
@@ -919,6 +987,14 @@ export const translations = {
       product: {
         title: '{{name}} - Cultiva100',
         description: '{{name}}を発見しましょう。プレミアム品質、科学的に配合された健康サプリメント。'
+      },
+      terms: {
+        title: '利用規約 - Cultiva100',
+        description: 'Cultiva100の利用規約をお読みください。ウェブサイトの使用および製品購入時の権利と義務を理解しましょう。'
+      },
+      privacy: {
+        title: 'プライバシーポリシー - Cultiva100',
+        description: 'Cultiva100のプライバシーポリシーをお読みください。個人情報の収集、使用、保護方法を理解しましょう。'
       }
     },
     home: {
@@ -1290,6 +1366,32 @@ export const translations = {
       wantToLearnMore: 'もっと知りたいですか？',
       wantToLearnMoreDesc: '私たちの製品を探索し、科学がどのようにウェルネスの利益に変わるかをご覧ください',
       browseProducts: '製品を閲覧'
+    },
+    terms: {
+      title: '利用規約',
+      description: 'ウェブサイトのご利用に関する権利と義務を理解するために、利用規約をお読みください。',
+      acceptance: '規約の承認',
+      acceptanceDesc: 'ウェブサイトを使用することで、これらの利用規約に拘束されることに同意したものとみなされます。同意しない場合は、ウェブサイトを使用しないでください。',
+      usage: '利用ポリシー',
+      usageDesc: 'ウェブサイトは個人の非営利目的でご利用いただけます。サービスを悪用または妨害してはなりません。',
+      term: '期間',
+      termDesc: 'これらの規約は、いずれかの当事者によって終了されるまで効力を維持します。規約に違反した場合、アクセスを終了する場合があります。',
+      modifications: '変更',
+      modificationsDesc: '随時これらの規約を更新する場合があります。重要な変更については通知します。'
+    },
+    privacy: {
+      title: 'プライバシーポリシー',
+      description: 'あなたのプライバシーは私たちの最優先事項です。個人情報の保護方法について学びましょう。',
+      infoCollection: '情報収集',
+      infoCollectionDesc: 'アカウントを作成または購入する際、氏名、電子メールアドレス、配送先などの個人情報を収集します。サービスの改善のために利用データも収集します。',
+      infoUsage: '情報の使用',
+      infoUsageDesc: 'あなたの情報は、注文の処理、顧客サポートの提供、体験の個人設定に使用されます。個人情報を第三者に販売することはありません。',
+      infoSharing: '情報の共有',
+      infoSharingDesc: '決済プロセッサーや配送会社など、サービス提供を支援する信頼できるパートナーと情報を共有する場合があります。これらのパートナーは情報を保護する義務があります。',
+      userRights: 'ユーザーの権利',
+      userRightsDesc: '個人情報へのアクセス、訂正、削除の権利があります。これらの権利を行使する場合はお問い合わせください。',
+      contact: 'お問い合わせ',
+      contactDesc: 'プライバシー慣行に関する質問がある場合は、privacy@cultiva100.net までお問い合わせください。'
     }
   }
 };

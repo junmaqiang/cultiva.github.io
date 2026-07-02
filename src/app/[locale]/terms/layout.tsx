@@ -1,7 +1,13 @@
-export async function generateMetadata() {
+import { translations } from '@/lib/i18n/translations';
+import { type Locale } from '@/lib/locale';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
+  const t = translations[locale] || translations.en;
+
   return {
-    title: 'Terms of Service - Cultiva100',
-    description: 'Read Cultiva100\'s Terms of Service. Understand your rights and obligations when using our website and purchasing our products.',
+    title: t.meta.terms.title,
+    description: t.meta.terms.description,
   };
 }
 
