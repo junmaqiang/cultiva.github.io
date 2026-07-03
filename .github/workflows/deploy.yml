@@ -57,4 +57,7 @@ jobs:
     needs: build
     steps:
       - name: Deploy to GitHub Pages
+        id: deployment # 增加此 ID 修复页面输出链接问题
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 600000 # 显式设置 10 分钟超时
