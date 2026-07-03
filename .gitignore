@@ -90,6 +90,7 @@ Desktop.ini
 *.gz
 *.zip
 *.tar
+./content/products.zip
 
 # TypeScript
 *.tsbuildinfo
