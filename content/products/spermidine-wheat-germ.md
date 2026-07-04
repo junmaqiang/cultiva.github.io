@@ -1,16 +1,16 @@
 ---
-id: "6"
+id: "11"
 name: "Spermidine Wheat Germ"
 nameEn: "Spermidine Wheat Germ Extract"
 nameZh: "亚精胺小麦胚芽提取物"
-nameJa: "スペルミジン小麦胚芽抽出物"
-description: "Natural spermidine from wheat germ for autophagy and cellular renewal."
-descriptionEn: "Natural spermidine from wheat germ for autophagy and cellular renewal."
+nameJa: "スペルミジン 小麦胚芽抽出物"
+description: "Natural spermidine from wheat germ, promoting autophagy and renewal."
+descriptionEn: "Natural spermidine from wheat germ, promoting autophagy and renewal. Induces cellular autophagy, promotes cell renewal, supports longevity gene expression and provides antioxidant protection."
 descriptionZh: "小麦胚芽来源的天然亚精胺，促进细胞自噬和更新。"
-descriptionJa: "オートファジーと細胞再生のための小麦胚芽由来の天然スペルミジン。"
-price: 458.00
-image: "/images/product-7.jpg"
-category: "ginsenoside"
+descriptionJa: "小麦胚芽由来の天然スペルミジン、オートファジーと細胞再生を促進。細胞オートファジーを誘導し、細胞再生を促進し、長寿遺伝子発現をサポートし、抗酸化保護を提供します。"
+price: 880.00
+image: "/images/11.jpg"
+category: "spermidine"
 inStock: true
 rating: 4.7
 reviews: 198

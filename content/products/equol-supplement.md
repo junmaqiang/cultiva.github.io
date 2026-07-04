@@ -1,15 +1,15 @@
 ---
-id: "2"
+id: "13"
 name: "Equol Supplement"
-nameEn: "Equol Premium Supplement"
+nameEn: "Equol Premium Supplement for Women"
 nameZh: "雌马酚"
-nameJa: "エクオール"
-description: "Natural equol supplement for women's health and hormonal balance."
-descriptionEn: "Natural equol supplement for women's health and hormonal balance."
+nameJa: "エクオール プレミアムサプリメント"
+description: "Natural equol supplement, supporting women's health and hormonal balance."
+descriptionEn: "Natural equol supplement, supporting women's health and hormonal balance. Specifically designed for women's health with hormone balance support, menopausal symptom relief, bone health promotion and antioxidant protection."
 descriptionZh: "天然雌马酚补充剂，支持女性健康和荷尔蒙平衡。"
-descriptionJa: "女性の健康とホルモンバランスをサポートする天然エクオールサプリメント。"
-price: 249.00
-image: "/images/product-2.jpg"
+descriptionJa: "天然エクオールサプリメント、女性の健康とホルモンバランスをサポート。女性の健康のために特別に設計され、ホルモンバランスサポート、更年期症状緩和、骨健康促進、抗酸化保護を提供します。"
+price: 880.00
+image: "/images/13.jpg"
 category: "equol"
 inStock: true
 rating: 4.7
