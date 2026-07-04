@@ -35,9 +35,9 @@ export function HomeContent({ locale }: HomeContentProps) {
   return (
     <main className="flex-1">
       <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50/50 via-white to-white dark:from-emerald-950/10 dark:via-background dark:to-background">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 -left-20 w-72 h-72 bg-emerald-200/30 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 -left-20 w-72 h-72 bg-emerald-200/30 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl pointer-events-none"></div>
         </div>
         <div className="page-container py-8 md:py-12 lg:py-16">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -95,7 +95,7 @@ export function HomeContent({ locale }: HomeContentProps) {
             <div className="relative">
               <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl shadow-black/10 dark:shadow-black/20 w-[90%] mx-auto">
                 <Image
-                  src="/images/hero.png"
+                  src="/images/hero.jpg"
                   alt="Premium Supplements"
                   width={800}
                   height={800}

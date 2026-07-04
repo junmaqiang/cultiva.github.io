@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Inspector } from 'react-dev-inspector';
 import { AppProvider } from '@/context/AppContext';
 import { CartProvider } from '@/context/CartContext';
 import { LanguageProvider } from '@/components/layout/LanguageProvider';
@@ -51,12 +50,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isDev = process.env.COZE_PROJECT_ENV === 'DEV';
-
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`antialiased min-h-screen flex flex-col font-sans`}>
-        {isDev && <Inspector />}
         <AppProvider>
           <LanguageProvider />
           <CartProvider>

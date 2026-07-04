@@ -29,15 +29,31 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const params = useParams();
   const urlLocale = (params.locale as Locale) || 'en';
   
-  const [language, setLanguage] = useState<Language>(urlLocale as Language);
+  const [savedLanguage, setSavedLanguage] = useState<Language>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('language') as Language;
+      if (saved && languageCodes.includes(saved)) {
+        return saved;
+      }
+    }
+    return (urlLocale as Language) || 'en';
+  });
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  const effectiveLanguage: Language = languageCodes.includes(urlLocale as Language) 
+    ? (urlLocale as Language) 
+    : savedLanguage;
+
+  const setLanguage = (lang: Language) => {
+    setSavedLanguage(lang);
+    localStorage.setItem('language', lang);
+  };
+
   useEffect(() => {
     const urlLang = urlLocale === 'zh' ? 'zh' : urlLocale === 'ja' ? 'ja' : 'en';
     if (languageCodes.includes(urlLang)) {
-      setLanguage(urlLang as Language);
       localStorage.setItem('language', urlLang);
     }
   }, [urlLocale]);
@@ -79,8 +95,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
   };
 
   useEffect(() => {
-    localStorage.setItem('language', language);
-  }, [language]);
+    localStorage.setItem('language', effectiveLanguage);
+  }, [effectiveLanguage]);
 
   useEffect(() => {
     localStorage.setItem('darkMode', isDarkMode.toString());
@@ -98,10 +114,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
   return (
     <AppContext.Provider
       value={{
-        language,
+        language: effectiveLanguage,
         setLanguage,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        t: translations[language] as any,
+        t: translations[effectiveLanguage] || translations.en as any,
         isDarkMode,
         toggleDarkMode,
         user,

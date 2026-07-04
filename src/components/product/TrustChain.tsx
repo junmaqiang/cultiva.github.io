@@ -94,7 +94,7 @@ export function TrustChain({ language, productSources = defaultSources }: TrustC
     expertsSub: string;
     certifications: string;
     certificationsSub: string;
-    viewMap: string;
+
   }> = {
     en: {
       transparency: 'Transparent Sourcing',
@@ -103,7 +103,6 @@ export function TrustChain({ language, productSources = defaultSources }: TrustC
       expertsSub: 'Developed by leading scientists and nutritionists',
       certifications: 'Quality Certifications',
       certificationsSub: 'Verified by authoritative bodies',
-      viewMap: 'View Source Map',
     },
     zh: {
       transparency: '透明溯源',
@@ -112,7 +111,6 @@ export function TrustChain({ language, productSources = defaultSources }: TrustC
       expertsSub: '由顶尖科学家和营养师研发',
       certifications: '质量认证',
       certificationsSub: '权威机构认证',
-      viewMap: '查看溯源地图',
     },
     ja: {
       transparency: '透明な調達',
@@ -121,7 +119,6 @@ export function TrustChain({ language, productSources = defaultSources }: TrustC
       expertsSub: '一流の科学者と栄養士が開発',
       certifications: '品質認証',
       certificationsSub: '権威ある機関による認定',
-      viewMap: '調達地図を見る',
     },
   };
 
@@ -212,12 +209,6 @@ export function TrustChain({ language, productSources = defaultSources }: TrustC
           </div>
         </div>
 
-        <div className="text-center">
-          <button className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors font-medium">
-            <Globe className="h-4 w-4" />
-            {t.viewMap}
-          </button>
-        </div>
       </div>
     </section>
   );

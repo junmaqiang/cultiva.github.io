@@ -58,6 +58,18 @@ export interface SiteConfig {
     twitter?: string;
     linkedin?: string;
   };
+
+  // 电商店铺链接
+  shops: {
+    tmall: {
+      name: string;
+      url: string;
+    };
+    taobao: {
+      name: string;
+      url: string;
+    };
+  };
 }
 
 // 开发环境配置
@@ -116,6 +128,17 @@ export const devConfig: SiteConfig = {
 //     twitter: 'https://twitter.com/cultiva100',
 //     linkedin: 'https://www.linkedin.com/company/cultiva100',
   },
+
+  shops: {
+    tmall: {
+      name: '天猫旗舰店',
+      url: 'https://cultiva100bjsp.tmall.hk',
+    },
+    taobao: {
+      name: '淘宝店',
+      url: 'https://shop12345678.taobao.com',
+    },
+  },
 };
 
 // 生产环境配置
@@ -173,6 +196,17 @@ export const prodConfig: SiteConfig = {
     // facebook: 'https://www.facebook.com/cultiva100',
     // twitter: 'https://twitter.com/cultiva100',
     // linkedin: 'https://www.linkedin.com/company/cultiva100',
+  },
+
+  shops: {
+    tmall: {
+      name: '天猫旗舰店',
+      url: 'https://cultiva100bjsp.tmall.hk/',
+    },
+    taobao: {
+      name: '淘宝店',
+      url: 'https://shop491180555.taobao.com/',
+    },
   },
 };
 

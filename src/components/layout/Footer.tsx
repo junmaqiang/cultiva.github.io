@@ -6,60 +6,20 @@ import { useParams } from 'next/navigation';
 import { Instagram, Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { siteConfig } from '@/lib/config';
 import { type Locale } from '@/lib/locale';
-
-const footerTranslations = {
-  en: {
-    copyright: '©{year} Cultiva100.net All rights reserved.',
-    brandDescription: 'Premium supplements, scientifically formulated.',
-    quickLinks: 'Quick Links',
-    followUs: 'Follow Us',
-    followDescription: 'Follow us for the latest updates on health and wellness.',
-    termsOfService: 'Terms of Service',
-    privacyPolicy: 'Privacy Policy',
-    home: 'Home',
-    products: 'Products',
-    about: 'About',
-    contact: 'Contact',
-  },
-  zh: {
-    copyright: '©{year} Cultiva100.net 保留所有权利。',
-    brandDescription: '优质补充剂，配方更科学。',
-    quickLinks: '快速链接',
-    followUs: '关注我们',
-    followDescription: '关注我们获取最新健康资讯。',
-    termsOfService: '服务条款',
-    privacyPolicy: '隐私政策',
-    home: '首页',
-    products: '产品',
-    about: '关于',
-    contact: '联系',
-  },
-  ja: {
-    copyright: '©{year} Cultiva100.net 全著作権所有。',
-    brandDescription: 'プレミアムサプリメント、科学的に配合。',
-    quickLinks: 'クイックリンク',
-    followUs: 'フォロー',
-    followDescription: '最新の健康情報を入手するためにフォローしてください。',
-    termsOfService: '利用規約',
-    privacyPolicy: 'プライバシーポリシー',
-    home: 'ホーム',
-    products: '製品',
-    about: '会社概要',
-    contact: 'お問い合わせ',
-  },
-};
+import { translations } from '@/lib/i18n/translations';
 
 export function Footer() {
   const params = useParams();
   const locale = (params.locale as Locale) || 'en';
-  const t = footerTranslations[locale] || footerTranslations.en;
-  const [year, setYear] = useState('');
+  const language = locale === 'zh' ? 'zh' : locale === 'ja' ? 'ja' : 'en';
+  const t = translations[language];
+  const [year, setYear] = useState(new Date().getFullYear().toString());
 
   useEffect(() => {
     setYear(new Date().getFullYear().toString());
   }, []);
 
-  const copyrightText = t.copyright.replace('{year}', year);
+  const copyrightText = t.footer.copyright.replace('{year}', year);
 
   return (
     <footer id="contact" className="bg-muted/50 border-t mt-auto">
@@ -76,7 +36,7 @@ export function Footer() {
               </h3>
             )}
             <p className="text-muted-foreground text-sm">
-              {t.brandDescription}
+              {t.footer.brandDescription}
             </p>
             <div className="flex space-x-4">
               {siteConfig.social.instagram && (
@@ -103,33 +63,33 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">{t.quickLinks}</h4>
+            <h4 className="font-semibold mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href={`/${locale}`} className="text-muted-foreground hover:text-foreground transition-colors">
-                  {t.home}
+                  {t.nav.home}
                 </Link>
               </li>
               <li>
                 <Link href={`/${locale}/products`} className="text-muted-foreground hover:text-foreground transition-colors">
-                  {t.products}
+                  {t.nav.products}
                 </Link>
               </li>
               <li>
                 <Link href={`/${locale}/about`} className="text-muted-foreground hover:text-foreground transition-colors">
-                  {t.about}
+                  {t.nav.about}
                 </Link>
               </li>
               <li>
                 <Link href={`/${locale}/contact`} className="text-muted-foreground hover:text-foreground transition-colors">
-                  {t.contact}
+                  {t.nav.contact}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">{t.contact}</h4>
+            <h4 className="font-semibold mb-4">{t.contact.title}</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 mt-0.5 text-muted-foreground flex-shrink-0" />
@@ -151,9 +111,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">{t.followUs}</h4>
+            <h4 className="font-semibold mb-4">{t.footer.followUs}</h4>
             <p className="text-muted-foreground text-sm mb-4">
-              {t.followDescription}
+              {t.footer.followDescription}
             </p>
             <div className="flex space-x-3">
               {siteConfig.social.weibo && (
@@ -188,10 +148,10 @@ export function Footer() {
           <p>{copyrightText}</p>
           <div className="mt-2 space-x-4">
             <Link href={`/${locale}${siteConfig.footer.termsOfService}`} className="hover:text-foreground transition-colors">
-              {t.termsOfService}
+              {t.footer.termsOfService}
             </Link>
             <Link href={`/${locale}${siteConfig.footer.privacyPolicy}`} className="hover:text-foreground transition-colors">
-              {t.privacyPolicy}
+              {t.footer.privacyPolicy}
             </Link>
           </div>
         </div>

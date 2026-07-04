@@ -49,7 +49,7 @@ export function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
-    <Link href={`/products/${product.id}`}>
+    <Link href={`/${language}/products/${product.id}`}>
       <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-lg group cursor-pointer">
         <div className="relative aspect-square overflow-hidden bg-muted">
           <Image

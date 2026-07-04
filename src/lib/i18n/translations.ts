@@ -136,12 +136,15 @@ export const translations = {
       back: 'Back',
       notFound: 'Product not found',
       backToProducts: 'Back to Products',
+      noProducts: 'No products found',
       addToCart: 'Add to Cart',
       added: 'Added to Cart',
       quantity: 'Quantity',
-      shipping: 'Free shipping on orders over $100',
-      returns: '30-day return policy',
-      securePayment: 'Secure payment guaranteed'
+      shipping: 'Free Shipping',
+      returns: '7-Day Free Returns',
+      securePayment: 'Secure payment guaranteed',
+      tmall: 'Visit Tmall Flagship Store',
+      taobao: 'Visit Taobao Store'
     },
     cart: {
       title: 'Shopping Cart',
@@ -220,7 +223,7 @@ export const translations = {
       copyright: '©{year} Cultiva100.net All rights reserved.',
       quickLinks: 'Quick Links',
       followUs: 'Follow Us',
-      brandDescription: 'Premium quality health supplements, scientifically formulated for your wellness.',
+      brandDescription: 'Premium supplements, scientifically formulated.',
       followDescription: 'Follow us for the latest updates on health and wellness.',
       termsOfService: 'Terms of Service',
       privacyPolicy: 'Privacy Policy'
@@ -599,12 +602,15 @@ export const translations = {
       back: '返回',
       notFound: '产品未找到',
       backToProducts: '返回产品列表',
+      noProducts: '未找到产品',
       addToCart: '加入购物车',
       added: '已加入购物车',
       quantity: '数量',
-      shipping: '订单满$100免费配送',
-      returns: '30天退货政策',
-      securePayment: '安全支付保障'
+      shipping: '免费包邮',
+      returns: '7天无理由退货',
+      securePayment: '安全支付保障',
+      tmall: '前往天猫旗舰店',
+      taobao: '前往淘宝店'
     },
     cart: {
       title: '购物车',
@@ -680,11 +686,11 @@ export const translations = {
       loggingIn: '登录中...'
     },
     footer: {
-      copyright: '©{year} Cultiva100.net 保留所有权利',
+      copyright: '©{year} Cultiva100.net 保留所有权利。',
       quickLinks: '快速链接',
       followUs: '关注我们',
-      brandDescription: '高端品质保健品，为您的健康科学配方。',
-      followDescription: '关注后，能获取更新资讯',
+      brandDescription: '优质补充剂，配方更科学。',
+      followDescription: '关注我们获取最新健康资讯。',
       termsOfService: '服务条款',
       privacyPolicy: '隐私政策'
     },
@@ -1062,12 +1068,15 @@ export const translations = {
       back: '戻る',
       notFound: '商品が見つかりません',
       backToProducts: '商品一覧に戻る',
+      noProducts: '商品が見つかりません',
       addToCart: 'カートに追加',
       added: 'カートに追加されました',
       quantity: '数量',
-      shipping: '$100以上のご注文で送料無料',
-      returns: '30日間返品ポリシー',
-      securePayment: '安全なお支払い保証'
+      shipping: '送料無料',
+      returns: '7日間無理由返品',
+      securePayment: '安全なお支払い保証',
+      tmall: 'Tmallフラグシップストアを訪問',
+      taobao: 'Taobaoストアを訪問'
     },
     cart: {
       title: 'ショッピングカート',
@@ -1143,11 +1152,11 @@ export const translations = {
       loggingIn: 'ログイン中...'
     },
     footer: {
-      copyright: '©{year} Cultiva100.net All rights reserved.',
+      copyright: '©{year} Cultiva100.net 全著作権所有。',
       quickLinks: 'クイックリンク',
       followUs: 'フォローする',
-      brandDescription: 'プレミアム品質健康サプリメント、あなたのウェルネスのために科学的に配合されています。',
-      followDescription: '健康とウェルネスの最新情報をフォローしてください。',
+      brandDescription: 'プレミアムサプリメント、科学的に配合。',
+      followDescription: '最新の健康情報を入手するためにフォローしてください。',
       termsOfService: '利用規約',
       privacyPolicy: 'プライバシーポリシー'
     },
