@@ -9,7 +9,7 @@ descriptionEn: "Cell-level internal nourishment for radiant skin. Addressing fro
 descriptionZh: "细胞级内养，养出原生光电肌肤。"
 descriptionJa: "細胞レベルの内側からの栄養補給で輝く肌を育てます。エネルギー拡張、酸化保護、細胞自己浄化の3次元からアプローチし、現在科学界で認められている細胞抗衰老化の完全な経路を開放します。"
 price: 880.00
-image: "/images/12.jpg"
+image: "/images/12.png"
 category: "spermidine"
 inStock: true
 rating: 4.7

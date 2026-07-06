@@ -9,7 +9,7 @@ descriptionEn: "Natural spermidine from wheat germ, promoting autophagy and rene
 descriptionZh: "小麦胚芽来源的天然亚精胺，促进细胞自噬和更新。"
 descriptionJa: "小麦胚芽由来の天然スペルミジン、オートファジーと細胞再生を促進。細胞オートファジーを誘導し、細胞再生を促進し、長寿遺伝子発現をサポートし、抗酸化保護を提供します。"
 price: 880.00
-image: "/images/11.jpg"
+image: "/images/11.png"
 category: "spermidine"
 inStock: true
 rating: 4.7

@@ -9,7 +9,7 @@ descriptionEn: "High-purity ginsenoside extract, supporting energy and immunity.
 descriptionZh: "高纯度人参皂苷提取物，支持体能和免疫。"
 descriptionJa: "高純度ジンセノサイド抽出物、エネルギーと免疫をサポート。高級人参根部から抽出され、エネルギーレベルの向上、免疫サポート、認知機能の改善、抗疲労効果を提供します。"
 price: 880.00
-image: "/images/14.jpg"
+image: "/images/14.png"
 category: "ginsenoside"
 inStock: true
 rating: 4.9
