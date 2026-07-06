@@ -41,13 +41,41 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build
-        run: NODE_ENV=production pnpm build
+      # 请确保 package.json 中有 build:export 脚本： "build:export": "next build && next export -o out"
+      - name: Build and export static site
+        run: pnpm run build:export
+
+      - name: Show build output candidates
+        run: |
+          echo "工作目录: $(pwd)"
+          echo "列出根目录文件："
+          ls -la
+          echo "查看常见输出目录（若不存在会返回非0，但这里使用 || true 保持继续）："
+          ls -la out || true
+          ls -la dist || true
+          ls -la .output || true
+          ls -la build || true
+          ls -la public || true
+
+      - name: Detect output directory
+        id: detect
+        run: |
+          # 优先检测常见的静态构建输出目录并确保非空
+          for d in out dist .output/public .output build public; do
+            if [ -d "$d" ] && [ "$(ls -A $d)" ]; then
+              echo "Found output dir: $d"
+              echo "output=$d" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+          done
+          echo "未找到非空输出目录，列出根目录以调试："
+          ls -la
+          exit 1
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: ${{ steps.detect.outputs.output }}
 
   deploy:
     environment:
@@ -57,7 +85,7 @@ jobs:
     needs: build
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment # 增加此 ID 修复页面输出链接问题
+        id: deployment
         uses: actions/deploy-pages@v4
         with:
-          timeout: 600000 # 显式设置 10 分钟超时
+          timeout: 600000 # 10 分钟超时
