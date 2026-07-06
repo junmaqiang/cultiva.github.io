@@ -41,34 +41,29 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # 请确保 package.json 中有 build:export 脚本： "build:export": "next build && next export -o out"
       - name: Build and export static site
         run: pnpm run build:export
 
-      - name: Show build output candidates
+      - name: Show build output
         run: |
-          echo "工作目录: $(pwd)"
-          echo "列出根目录文件："
+          echo "Current directory: $(pwd)"
+          echo "Contents of root directory:"
           ls -la
-          echo "查看常见输出目录（若不存在会返回非0，但这里使用 || true 保持继续）："
-          ls -la out || true
-          ls -la dist || true
-          ls -la .output || true
-          ls -la build || true
-          ls -la public || true
+          echo ""
+          echo "Contents of out directory (if exists):"
+          ls -la out || echo "out directory not found"
 
       - name: Detect output directory
         id: detect
         run: |
-          # 优先检测常见的静态构建输出目录并确保非空
           for d in out dist .output/public .output build public; do
-            if [ -d "$d" ] && [ "$(ls -A $d)" ]; then
+            if [ -d "$d" ] && [ -n "$(ls -A $d 2>/dev/null)" ]; then
               echo "Found output dir: $d"
               echo "output=$d" >> $GITHUB_OUTPUT
               exit 0
             fi
           done
-          echo "未找到非空输出目录，列出根目录以调试："
+          echo "ERROR: No non-empty output directory found"
           ls -la
           exit 1
 
@@ -88,4 +83,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          timeout: 900000 # 15 分钟超时
+          timeout: 900000
