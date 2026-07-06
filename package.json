@@ -4,13 +4,12 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "export": "next export -o out",
-    "build:export": "next build && next export -o out",
+    "build:export": "next build && next export",
     "dev": "next dev",
     "lint": "eslint",
     "start": "next start",
     "ts-check": "tsc -p tsconfig.json"
-  },
+},
   "dependencies": {
     "@aws-sdk/client-s3": "^3.958.0",
     "@aws-sdk/lib-storage": "^3.958.0",
