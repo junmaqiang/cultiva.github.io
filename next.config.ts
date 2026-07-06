@@ -27,7 +27,8 @@ const nextConfig: NextConfig = {
     optimizeCss: true,
   },
   trailingSlash: true,
-  output: isProduction ? 'export' : undefined,
+  // output: isProduction ? 'export' : undefined,
+  output: 'export',
   distDir: 'out',
 };
 
