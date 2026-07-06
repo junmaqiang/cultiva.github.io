@@ -28,8 +28,7 @@ const nextConfig: NextConfig = {
   },
   trailingSlash: true,
   // output: isProduction ? 'export' : undefined,
-  output: 'export',
-  distDir: 'out',
+  output: 'export'
 };
 
 export default nextConfig;
