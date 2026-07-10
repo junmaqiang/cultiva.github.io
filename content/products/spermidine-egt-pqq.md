@@ -1,7 +1,7 @@
 ---
 id: "12"
-name: "Spermidine EGT PQQ"
-nameEn: "Spermidine EGT PQQ Skin Rejuvenation"
+name: "EGT PQQ Spermidine"
+nameEn: "EGT PQQ Spermidine Skin Rejuvenation"
 nameZh: "亚精胺内服细胞级线粒体营养素"
 nameJa: "スペルミジンEGT PQQ スキンリジュベネーション"
 description: "Cell-level internal nourishment for radiant skin."
@@ -16,7 +16,7 @@ rating: 4.7
 reviews: 198
 ---
 
-# Spermidine EGT PQQ 肌肤焕变
+# EGT PQQ Spermidine 肌肤焕变
 
 ## 产品类型
 
