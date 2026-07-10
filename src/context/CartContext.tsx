@@ -18,6 +18,12 @@ export interface Product {
   inStock: boolean;
   rating: number;
   reviews: number;
+  productName: string;
+  productType: string;
+  suitableFor: string;
+  scenarios: string;
+  usage: string;
+  specification: string;
 }
 
 export interface CartItem {

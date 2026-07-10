@@ -72,7 +72,7 @@ export function ProductDetailContent({ product, locale }: ProductDetailContentPr
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 pb-8">
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div className="relative aspect-square rounded-2xl overflow-hidden bg-muted">
                 <Image
                   src={product.image}
@@ -82,6 +82,21 @@ export function ProductDetailContent({ product, locale }: ProductDetailContentPr
                   className="w-full h-full object-cover"
                   priority
                 />
+              </div>
+
+              <div className="border-t pt-6 space-y-4">
+                <div className="flex items-center gap-3 text-sm">
+                  <Check className="h-4 w-4 text-emerald-500" />
+                  <span>{t.products.shipping}</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <Check className="h-4 w-4 text-emerald-500" />
+                  <span>{t.products.returns}</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <Check className="h-4 w-4 text-emerald-500" />
+                  <span>{t.products.securePayment}</span>
+                </div>
               </div>
             </div>
 
@@ -132,7 +147,7 @@ export function ProductDetailContent({ product, locale }: ProductDetailContentPr
                   >
                     <Button
                       size="lg"
-                      className="flex-1 gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white"
+                      className="flex-1 gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white cursor-pointer"
                     >
                       {t.products.tmall}
                     </Button>
@@ -145,7 +160,7 @@ export function ProductDetailContent({ product, locale }: ProductDetailContentPr
                     <Button
                       size="lg"
                       variant="outline"
-                      className="flex-1 gap-2"
+                      className="flex-1 gap-2 cursor-pointer"
                     >
                       {t.products.taobao}
                     </Button>
@@ -153,21 +168,53 @@ export function ProductDetailContent({ product, locale }: ProductDetailContentPr
                 </div>
               </div>
 
-              <div className="border-t pt-6 space-y-4">
-                <div className="flex items-center gap-3 text-sm">
-                  <Check className="h-4 w-4 text-emerald-500" />
-                  <span>{t.products.shipping}</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm">
-                  <Check className="h-4 w-4 text-emerald-500" />
-                  <span>{t.products.returns}</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm">
-                  <Check className="h-4 w-4 text-emerald-500" />
-                  <span>{t.products.securePayment}</span>
-                </div>
+              <div className="border-t pt-6 space-y-6">
+                {product.productName && (
+                  <div>
+                    <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider mb-2">产品名称</h4>
+                    <p className="text-foreground">{product.productName}</p>
+                  </div>
+                )}
+                {product.productType && (
+                  <div>
+                    <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider mb-2">产品类型</h4>
+                    <p className="text-foreground">{product.productType}</p>
+                  </div>
+                )}
+                {product.suitableFor && (
+                  <div>
+                    <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider mb-2">适合人群</h4>
+                    <p className="text-foreground">{product.suitableFor}</p>
+                  </div>
+                )}
+                {product.scenarios && (
+                  <div>
+                    <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider mb-2">适用场景</h4>
+                    <ul className="text-foreground space-y-2">
+                      {product.scenarios.split('\n').map((item, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <span className="text-emerald-500 mt-1">-</span>
+                          <span>{item.replace(/^\d+\.\s*/, '')}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {product.usage && (
+                  <div>
+                    <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider mb-2">服用方式</h4>
+                    <p className="text-foreground whitespace-pre-line">{product.usage}</p>
+                  </div>
+                )}
+                {product.specification && (
+                  <div>
+                    <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider mb-2">规格</h4>
+                    <p className="text-foreground">{product.specification}</p>
+                  </div>
+                )}
               </div>
             </div>
+
           </div>
 
           <div className="pt-8">
