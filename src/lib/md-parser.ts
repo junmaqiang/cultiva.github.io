@@ -41,8 +41,21 @@ function parseProductContent(content: string): Record<string, string> {
     if (!section.trim()) return;
     
     const lines = section.trim().split('\n');
-    const title = lines[0].trim();
-    const body = lines.slice(1).join('\n').trim();
+    const firstLine = lines[0].trim();
+    
+    const colonIndex = firstLine.indexOf('：');
+    let title: string;
+    let body: string;
+    
+    if (colonIndex !== -1) {
+      title = firstLine.substring(0, colonIndex).trim();
+      const inlineContent = firstLine.substring(colonIndex + 1).trim();
+      const remainingBody = lines.slice(1).join('\n').trim();
+      body = inlineContent || remainingBody;
+    } else {
+      title = firstLine;
+      body = lines.slice(1).join('\n').trim();
+    }
     
     result[title] = body;
   });
@@ -77,10 +90,11 @@ export function parseProductFile(filePath: string): Product | null {
       reviews: frontmatter.reviews as number || 0,
       productName: parsedContent['产品名称'] || '',
       productType: parsedContent['产品类型'] || '',
+      specification: parsedContent['规格'] || '',
       suitableFor: parsedContent['适合人群'] || '',
       scenarios: parsedContent['适用场景'] || '',
       usage: parsedContent['服用方式'] || '',
-      specification: parsedContent['规格'] || '',
+      cautions: parsedContent['注意事项'] || '',
     };
   } catch {
     return null;

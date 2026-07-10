@@ -20,10 +20,11 @@ export interface Product {
   reviews: number;
   productName: string;
   productType: string;
+  specification: string;
   suitableFor: string;
   scenarios: string;
   usage: string;
-  specification: string;
+  cautions: string;
 }
 
 export interface CartItem {

@@ -111,18 +111,7 @@ export function ProductDetailContent({ product, locale }: ProductDetailContentPr
                   )}
                 </div>
                 <h1 className="text-3xl md:text-4xl font-bold font-serif mb-4">{getProductName()}</h1>
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`h-5 w-5 ${i < Math.floor(product.rating) ? 'fill-amber-400 text-amber-400' : 'text-muted-foreground'}`}
-                      />
-                    ))}
-                    <span className="ml-2 font-medium">{product.rating}</span>
-                  </div>
-                  <span className="text-muted-foreground">({product.reviews} {t.products.reviews})</span>
-                </div>
+                
               </div>
 
               <div className="border-t pt-6">
@@ -134,7 +123,6 @@ export function ProductDetailContent({ product, locale }: ProductDetailContentPr
               </div>
 
               <div>
-                <h3 className="font-semibold mb-3">{t.products.description}</h3>
                 <p className="text-muted-foreground leading-relaxed">{getProductDescription()}</p>
               </div>
 
@@ -168,29 +156,35 @@ export function ProductDetailContent({ product, locale }: ProductDetailContentPr
                 </div>
               </div>
 
-              <div className="border-t pt-6 space-y-6">
+              <div className="border-t pt-6 space-y-4">
                 {product.productName && (
-                  <div>
-                    <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider mb-2">产品名称</h4>
-                    <p className="text-foreground">{product.productName}</p>
+                  <div className="flex items-start gap-2">
+                    <span className="font-bold text-base text-foreground">产品名称：</span>
+                    <span className="text-base text-muted-foreground">{product.productName}</span>
                   </div>
                 )}
                 {product.productType && (
-                  <div>
-                    <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider mb-2">产品类型</h4>
-                    <p className="text-foreground">{product.productType}</p>
+                  <div className="flex items-start gap-2">
+                    <span className="font-bold text-base text-foreground">产品类型：</span>
+                    <span className="text-base text-muted-foreground">{product.productType}</span>
+                  </div>
+                )}
+                {product.specification && (
+                  <div className="flex items-start gap-2">
+                    <span className="font-bold text-base text-foreground">规格：</span>
+                    <span className="text-base text-muted-foreground">{product.specification}</span>
                   </div>
                 )}
                 {product.suitableFor && (
-                  <div>
-                    <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider mb-2">适合人群</h4>
-                    <p className="text-foreground">{product.suitableFor}</p>
+                  <div className="flex flex-col gap-2">
+                    <span className="font-bold text-base text-foreground">适合人群</span>
+                    <p className="text-base text-muted-foreground">{product.suitableFor}</p>
                   </div>
                 )}
                 {product.scenarios && (
-                  <div>
-                    <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider mb-2">适用场景</h4>
-                    <ul className="text-foreground space-y-2">
+                  <div className="flex flex-col gap-2">
+                    <span className="font-bold text-base text-foreground">适用场景</span>
+                    <ul className="text-base text-muted-foreground space-y-2">
                       {product.scenarios.split('\n').map((item, index) => (
                         <li key={index} className="flex items-start gap-2">
                           <span className="text-emerald-500 mt-1">-</span>
@@ -201,15 +195,22 @@ export function ProductDetailContent({ product, locale }: ProductDetailContentPr
                   </div>
                 )}
                 {product.usage && (
-                  <div>
-                    <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider mb-2">服用方式</h4>
-                    <p className="text-foreground whitespace-pre-line">{product.usage}</p>
+                  <div className="flex items-start gap-2">
+                    <span className="font-bold text-base text-foreground">服用方式：</span>
+                    <span className="text-base text-muted-foreground">{product.usage}</span>
                   </div>
                 )}
-                {product.specification && (
-                  <div>
-                    <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wider mb-2">规格</h4>
-                    <p className="text-foreground">{product.specification}</p>
+                {product.cautions && (
+                  <div className="flex flex-col gap-2">
+                    <span className="font-bold text-base text-foreground">注意事项</span>
+                    <ul className="text-base text-muted-foreground space-y-2">
+                      {product.cautions.split('\n').filter(line => line.trim()).map((item, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <span className="text-amber-500 mt-1">-</span>
+                          <span>{item.replace(/^-\s*/, '')}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )}
               </div>
