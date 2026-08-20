@@ -231,7 +231,7 @@ function ProductsSearchContent({ locale }: ProductsSearchContentProps) {
                 </p>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-xl font-bold text-emerald-600">${product.price.toFixed(2)}</span>
+                  <span className="text-xl font-bold text-emerald-600">￥{product.price.toFixed(2)}</span>
                   <Button variant="ghost" className="gap-1 group-hover:text-emerald-600">
                     {t.products.viewDetails}
                     <ArrowRight className="h-4 w-4" />

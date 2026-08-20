@@ -116,8 +116,8 @@ export function ProductDetailContent({ product, locale }: ProductDetailContentPr
 
               <div className="border-t pt-6">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl font-bold text-emerald-600">${product.price.toFixed(2)}</span>
-                  <span className="text-muted-foreground line-through">${(product.price * 1.2).toFixed(2)}</span>
+                  <span className="text-4xl font-bold text-emerald-600">￥{product.price.toFixed(2)}</span>
+                  <span className="text-muted-foreground line-through">￥{(product.price * 1.2).toFixed(2)}</span>
                   <Badge variant="destructive">-20%</Badge>
                 </div>
               </div>
