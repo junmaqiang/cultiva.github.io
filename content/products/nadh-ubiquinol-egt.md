@@ -8,7 +8,7 @@ description: "Cardiovascular health power station."
 descriptionEn: "Cardiovascular health power station. Cardiovascular health supplement that enhances cellular energy metabolism and protects cardiovascular system with precision myocardial cell support, dual pathway brain enhancement, and dual skin & cellular rejuvenation."
 descriptionZh: "心血管健康发电站"
 descriptionJa: "心血管健康発電所。細胞エネルギー代謝を強化し心血管を保護するサプリメントで、心筋細胞の精密補給、脳力向上の二重経路、皮膚と細胞の二重若返りを実現します。"
-price: 880.00
+price: 1180.00
 image: "/images/10.png"
 category: "ergothioneine"
 inStock: true

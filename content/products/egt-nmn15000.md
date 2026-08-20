@@ -8,7 +8,7 @@ description: "High-purity NMN with resveratrol, powering cells and delaying agin
 descriptionEn: "High-purity NMN with resveratrol, powering cells and delaying aging. Full NAD+ pathway support with EGT+NMN+Resveratrol+Ubiquinol for enhanced NAD+ levels, cell repair, aging delay and energy metabolism boost."
 descriptionZh: "高纯度NMN配合白藜芦醇，为细胞供能，延缓衰老。"
 descriptionJa: "高純度NMNとレスベラトロール、細胞にエネルギーを供給し老化を遅延。EGT+NMN+レスベラトロール+ユビキノールによるNAD+全路線サポートで、NAD+レベルの向上、細胞修復、老化遅延、エネルギー代謝の強化を実現します。"
-price: 880.00
+price: 1180.00
 image: "/images/4.png"
 category: "ergothioneine"
 inStock: true

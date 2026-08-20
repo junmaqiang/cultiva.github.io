@@ -8,7 +8,7 @@ description: "All-round anti-aging supplement."
 descriptionEn: "All-round anti-aging supplement. Synergistically enhances cellular energy, cognition, and cardiovascular health."
 descriptionZh: "全能抗衰老补充剂。"
 descriptionJa: "オールラウンドアンチエイジングサプリメント。細胞エネルギー、認知機能、心血管健康を相乗的に向上させます。"
-price: 880.00
+price: 1180.00
 image: "/images/5.png"
 category: "ergothioneine"
 inStock: true
