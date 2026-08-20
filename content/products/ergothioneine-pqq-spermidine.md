@@ -8,7 +8,7 @@ description: "Premium anti-aging formula with ergothioneine, PQQ, and spermidine
 descriptionEn: "Premium anti-aging formula with ergothioneine, PQQ, and spermidine for cellular renewal. This high-end anti-aging formula combines three precious ingredients: Ergothioneine (powerful antioxidant), PQQ (mitochondrial regeneration), and Spermidine (cell autophagy)."
 descriptionZh: "含有麦角硫因、PQQ和亚精胺的高端抗衰老配方，促进细胞更新。"
 descriptionJa: "エルゴチオネイン、PQQ、スペルミジンを配合したプレミアムアンチエイジング処方。このハイエンドアンチエイジング処方は、3つの貴重な成分を融合しています：エルゴチオネイン（強力な抗酸化剤）、PQQ（ミトコンドリア再生）、スペルミジン（細胞オートファジー）。"
-price: 880.00
+price: 1180.00
 image: "/images/1.png"
 category: "ergothioneine"
 inStock: true

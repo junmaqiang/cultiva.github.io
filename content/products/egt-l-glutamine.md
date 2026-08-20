@@ -8,7 +8,7 @@ description: "From gut to beauty, nourish from within."
 descriptionEn: "From gut to beauty, nourish from within. 50 billion CFU LGG, the superstar of probiotic research, combined with L-glutamine to strengthen intestinal barrier."
 descriptionZh: "从肠计议，内养外颜"
 descriptionJa: "腸から始めて、内側から外側へ美しく。500億CFUのLGG、プロバイオティクス研究のスーパースターとL-グルタミンが腸内バリアを強化します。"
-price: 780.00
+price: 980.00
 image: "/images/9.png"
 category: "ergothioneine"
 inStock: true

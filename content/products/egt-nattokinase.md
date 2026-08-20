@@ -8,7 +8,7 @@ description: "Cardiovascular power station, enhancing cellular energy metabolism
 descriptionEn: "Cardiovascular power station, enhancing cellular energy metabolism. EGT+B420+Nattokinase for cardiovascular disease prevention, improved blood circulation, anti-aging and immunity boost."
 descriptionZh: "心脑血管发电站，增强细胞能量代谢。"
 descriptionJa: "心血管発電所、細胞エネルギー代謝を強化。EGT+B420+ナットウキナーゼで心血管疾患予防、血行改善、アンチエイジング、免疫力向上を実現します。"
-price: 780.00
+price: 980.00
 image: "/images/6.png"
 category: "ergothioneine"
 inStock: true

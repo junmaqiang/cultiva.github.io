@@ -8,7 +8,7 @@ description: "Combining EGT antioxidant, PS cognitive support and GABA calming e
 descriptionEn: "Combining EGT antioxidant, PS cognitive support and GABA calming effects. Provides comprehensive solution from neuroprotection to mood regulation."
 descriptionZh: "EGT抗氧化、PS的认知支持和GABA的镇静作用结合，提供从神经保护到情绪调节的综合解决方案。"
 descriptionJa: "EGT抗酸化、PS認知サポート、GABA鎮静作用を組み合わせ、神経保護から気分調整までの総合的なソリューションを提供します。"
-price: 780.00
+price: 980.00
 image: "/images/8.png"
 category: "ergothioneine"
 inStock: true

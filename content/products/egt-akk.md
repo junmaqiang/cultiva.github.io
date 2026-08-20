@@ -8,7 +8,7 @@ description: "Premium AKK probiotic, supporting metabolic health and weight mana
 descriptionEn: "Premium AKK probiotic, supporting metabolic health and weight management. AKK bacteria is an important gut probiotic crucial for metabolic health."
 descriptionZh: "高端AKK益生菌，支持代谢健康和体重管理。"
 descriptionJa: "プレミアムAKKプロバイオティクス、代謝健康と体重管理をサポート。AKK菌は代謝健康に不可欠な重要な腸内プロバイオティクスです。"
-price: 780.00
+price: 980.00
 image: "/images/7.png"
 category: "ergothioneine"
 inStock: true

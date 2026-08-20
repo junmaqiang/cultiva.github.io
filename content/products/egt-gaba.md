@@ -8,7 +8,7 @@ description: "Stress management and sleep improvement, promoting relaxation."
 descriptionEn: "Stress management and sleep improvement, promoting relaxation. Ergothioneine + GABA + L-theanine for quick sleep aid, antioxidant nerve protection and emotional health."
 descriptionZh: "压力管理与睡眠改善，促进放松。"
 descriptionJa: "ストレス管理と睡眠改善、リラクゼーションを促進。エルゴチオネイン+GABA+テアニンで素早い入眠、抗酸化神経保護、情緒健康を実現します。"
-price: 780.00
+price: 980.00
 image: "/images/3.png"
 category: "ergothioneine"
 inStock: true

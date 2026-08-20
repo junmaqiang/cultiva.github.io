@@ -8,7 +8,7 @@ description: "Antioxidant liver protection, reducing alcohol/stay-up liver damag
 descriptionEn: "Antioxidant liver protection, reducing alcohol/stay-up liver damage. Glutathione + Ergothioneine + Turmeric + Quercetin, your liver guardian for modern life."
 descriptionZh: "抗氧化护肝，减少酒精/熬夜导致的肝损伤。"
 descriptionJa: "抗酸化肝臓保護、アルコール/熬夜による肝臓損傷を軽減。グルタチオン+エルゴチオネイン+ウコン+ケルセチン、現代生活の肝臓守護者です。"
-price: 780.00
+price: 980.00
 image: "/images/2.png"
 category: "ergothioneine"
 inStock: true
